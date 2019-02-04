@@ -23,7 +23,7 @@ client.on('warn', console.warn);
 
 client.on('error', console.error);
 
-client.on('ready', () => console.log('Yo Hima its ready Yayyy !'));
+client.on('ready', () => console.log('Yo Rinzler is Online , Be Ready User !'));
 
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
