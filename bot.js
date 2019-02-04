@@ -267,24 +267,33 @@ client.on('message', message => {
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
-:notes:  [❖═════ Rinzler Music Bot Commands ═══════❖] :notes: 
+:notes:  [❖═════ Rinzler Music Commands ═══════❖] :notes: 
   
 ❖═════════════════════════════════════❖  
 
-:headphones:  ${prefix}play | اسم لاغنيه / رابط الاغنية
+:headphones: : ${prefix}play | اسم لاغنيه / رابط الاغنية
 
-:headphones:  ${prefix}skip | للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
+:headphones: : ${prefix}skip | للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
 
-:headphones:  ${prefix}stop | لأيقاف الموسيقى 
+:headphones: : ${prefix}stop | لأيقاف الموسيقى 
 
-:headphones:  ${prefix}volume | لتغير حجم الصوت
+:headphones: : ${prefix}volume | لتغير حجم الصوت
 
-:headphones:  ${prefix}np | لإقاف الموسيقى مؤقتا
+:headphones: : ${prefix}np | لإقاف الموسيقى مؤقتا
 
-:headphones:  ${prefix}resume | لاعادت تشغيل الاغنية الموجودة
+:headphones: : ${prefix}resume | لاعادت تشغيل الاغنية الموجودة
 
 
 ❖═════════════════════════════════════❖
+
+:tools:   [❖═════ Rinzler Bot Commands ═══════❖] :tools:  
+
+● :rocket: : $Rinzler :arrow_right: STATS BOT ●
+
+● :signal_strength: : $Ping :arrow_right: BOT PING ●
+
+❖═════════════════════════════════════❖
+
    :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
  **`);
 
