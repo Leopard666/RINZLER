@@ -320,6 +320,9 @@ client.on('message', message => {
           .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
           .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
           .setFooter(message.author.username, message.author.avatarURL)
+  })
+}
+});
 
 client.on('message', message => {
     var prefix = "$"
