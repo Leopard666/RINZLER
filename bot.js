@@ -271,6 +271,8 @@ var prefix = '-';
 ❖═════════════════════════════════════❖
    :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
  **`);
+
+message.author.sendEmbed(embed)
  }
 });
 
