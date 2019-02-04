@@ -271,26 +271,26 @@ client.on('message', message => {
   
 ❖═════════════════════════════════════❖  
 
-:headphones: : ${prefix}play | اسم لاغنيه / رابط الاغنية
+:headphones: : ${prefix}play :arrow_right: اسم لاغنيه / رابط الاغنية
 
-:headphones: : ${prefix}skip | للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
+:headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
 
-:headphones: : ${prefix}stop | لأيقاف الموسيقى 
+:headphones: : ${prefix}stop :arrow_right: لأيقاف الموسيقى 
 
-:headphones: : ${prefix}volume | لتغير حجم الصوت
+:headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت
 
-:headphones: : ${prefix}np | لإقاف الموسيقى مؤقتا
+:headphones: : ${prefix}np :arrow_right: لإقاف الموسيقى مؤقتا
 
-:headphones: : ${prefix}resume | لاعادت تشغيل الاغنية الموجودة
+:headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة
 
 
 ❖═════════════════════════════════════❖
 
 :tools:   [❖═════ Rinzler Bot Commands ═══════❖] :tools:  
 
-● :rocket: : $Rinzler :arrow_right: STATS BOT ●
+● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
-● :signal_strength: : $Ping :arrow_right: BOT PING ●
+● :signal_strength: : ${prefix}Ping :arrow_right: BOT PING ●
 
 ❖═════════════════════════════════════❖
 
@@ -303,7 +303,7 @@ message.author.sendEmbed(embed)
 
 client.on('message', message => {
   if(!message.channel.guild) return;
-if (message.content.startsWith('$ping')) {
+if (message.content.startsWith('-ping')) {
 if(!message.channel.guild) return;
 var msg = `${Date.now() - message.createdTimestamp}`
 var api = `${Math.round(client.ping)}`
@@ -318,7 +318,7 @@ message.channel.send({embed:embed});
 });
 
 client.on('message', message => {
-  if (message.content === ('$Rinzler')) {
+  if (message.content === ('-Rinzler')) {
   message.channel.send({
       embed: new Discord.RichEmbed()
           .setAuthor(client.user.username,client.user.avatarURL)
@@ -336,7 +336,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    var prefix = "$"
+    var prefix = "-"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
