@@ -243,12 +243,19 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 });
 
 var prefix = '-';
-client.on('message', msg => {
-	if (msg.content.startsWith(prefix + 'help')) {
-msg.author.send(":notes: **RINZLER MUSIC BOT COMMANDS** :notes:" + `  **
-   
-:zap: [❖══════════════════════════════════════════════❖]  :zap: 
-   
+client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:notes:  [❖═════ Rinzler Music Bot Commands ═══════❖] :notes: 
+  
+❖═════════════════════════════════════❖  
+
 :headphones:  ${prefix}play | اسم لاغنيه / رابط الاغنية
 
 :headphones:  ${prefix}skip | للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
@@ -262,14 +269,13 @@ msg.author.send(":notes: **RINZLER MUSIC BOT COMMANDS** :notes:" + `  **
 :headphones:  ${prefix}resume | لاعادت تشغيل الاغنية الموجودة
 
 
-:zap: [❖══════════════════════════════════════════════❖]  :zap: 
+❖═════════════════════════════════════❖
+   :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
+ **`);
 
-:fire: RINZLER BOT MADE BY : "THE RARE RANGER" - THE GRID™ - OFFICIAL :fire:
-
-**`);
- }
+message.author.sendEmbed(embed)
+  }
 });
-
 
 
 client.login(process.env.BOT_TOKEN);
