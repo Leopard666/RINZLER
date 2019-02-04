@@ -15,10 +15,7 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 
 const queue = new Map();
 client.on('ready', function() {
-	console.log(`Hima it's Ready ${client.user.username}`);
-    client.user.setGame(prefix + 'help || play ');
-	client.user.setStatus("dnd")
-	client.user.setGame(`TheDamNation™ ❘ -Play`,`https://www.twitch.tv/TheRealPredvkill`);
+	console.log(`Hes Ready Now ${client.user.username}`);
 });
 
 
@@ -28,9 +25,9 @@ client.on('error', console.error);
 
 client.on('ready', () => console.log('Yo Hima its ready Yayyy !'));
 
-// client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
+client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
-// client.on('reconnecting', () => console.log('I am reconnecting now!'));
+client.on('reconnecting', () => console.log('I am reconnecting now !'));
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
@@ -248,11 +245,12 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 var prefix = '-';
 
 client.on('message', msg => {
-	if (msg.content.startsWith(prefix + 'help')) {
-msg.author.send(":notes: **Commands / ستاتي** :notes:" + `  **
-
-   " :fire: **Hima Music Commands :** :fire: "
-   
+if (msg.content.startsWith(prefix + 'help')) {
+message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+const embed = new Discord.RichEmbed()
+.setAuthor(message.author.username,message.author.avatarURL)
+.setColor('RANDOM')
+msg.author.send(":notes: **RINZLER BOT COMMANDS** :notes:" + `  **   
 :zap: [❖══════════════════════════════════════════════❖]  :zap: 
    
 :headphones:  ${prefix}play | اسم لاغنيه / رابط الاغنية
@@ -270,12 +268,27 @@ msg.author.send(":notes: **Commands / ستاتي** :notes:" + `  **
 
 :zap: [❖══════════════════════════════════════════════❖]  :zap: 
 
-:fire: HIMA BOT MADE BY : "THE RARE RANGER" - The DamNation™ - Official :fire:
+:fire: RINZLER BOT MADE BY : "THE RARE RANGER" - The Grid™ - Official :fire:
 
 **`);
  }
 });
 
+client.on('ready', function(){
+  client.user.setStatus("dnd");
+    var ms = 10000 ;
+    var setGame = ['★ -Play | MusicBot ★','The Grid™ | Server ' ];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
+    }, ms);
+
 client.login(process.env.BOT_TOKEN);
-
-
