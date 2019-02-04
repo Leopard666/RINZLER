@@ -243,34 +243,34 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 });
 
 var prefix = '-';
+	client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:rose:  [❖═════ Rianzler Music Bot Commands ═══════❖] :rose: 
+  
+❖═════════════════════════════════════❖  
 
-client.on('message', msg => {
-if (msg.content.startsWith(prefix + 'help')) {
-message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
-const embed = new Discord.RichEmbed()
-.setAuthor(message.author.username,message.author.avatarURL)
-.setColor('RANDOM')
-msg.author.send(":notes: **RINZLER BOT COMMANDS** :notes:" + `  **   
-:zap: [❖══════════════════════════════════════════════❖]  :zap: 
-   
-:headphones:  ${prefix}play | اسم لاغنيه / رابط الاغنية
+:headphones:  ${prefix}play | ● اسم لاغنيه / رابط الاغنية
 
-:headphones:  ${prefix}skip | للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
+:headphones:  ${prefix}skip | ● للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار 
 
-:headphones:  ${prefix}stop | لأيقاف الموسيقى 
+:headphones:  ${prefix}stop | ● لأيقاف الموسيقى 
 
-:headphones:  ${prefix}volume | لتغير حجم الصوت
+:headphones:  ${prefix}volume | ● لتغير حجم الصوت
 
-:headphones:  ${prefix}np | لإقاف الموسيقى مؤقتا
+:headphones:  ${prefix}np | ● لإقاف الموسيقى مؤقتا
 
-:headphones:  ${prefix}resume | لاعادت تشغيل الاغنية الموجودة
+:headphones:  ${prefix}resume | ● لاعادت تشغيل الاغنية الموجودة
 
-
-:zap: [❖══════════════════════════════════════════════❖]  :zap: 
-
-:fire: RINZLER BOT MADE BY : "THE RARE RANGER" - The Grid™ - Official :fire:
-
-**`);
+❖═════════════════════════════════════❖
+   :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
+ **`);
  }
 });
 
