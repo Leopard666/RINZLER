@@ -283,6 +283,8 @@ client.on('message', message => {
 
 :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة
 
+:headphones: : ${prefix}join :arrow_right: انضمام بوت لقناة صوت
+
 
 ❖═════════════════════════════════════❖
 
