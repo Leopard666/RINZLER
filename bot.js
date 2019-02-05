@@ -348,12 +348,11 @@ client.on('message', message => {
 
 ● :frame_photo: : ${prefix}avatar :arrow_right: افاتار الشخص المطلوب ●
 
+● :books: : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+
 ●●●●●●●●●● المزيد قريبا ان شاء الله! ●●●●●●●●●●●
 
-❖═════════════════════════════════════❖
-
-   :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
- **`);
+:zap: ─════════════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ════════════─ :zap:**`);
 
 message.author.sendEmbed(embed)
   }
