@@ -306,12 +306,12 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
     
-   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:');
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
-:notes:  [❖═════ ● برفكس البوت (!) / أوامر الميوزك ● ═══════❖] :notes: 
+:notes:  [❖═════ ● برفكس البوت (!) & أوامر الميوزك ● ═══════❖] :notes: 
   
 ❖═════════════════════════════════════❖  
 
@@ -336,7 +336,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:tools:   [❖═════ Rinzler Bot Commands ═══════❖] :tools:  
+:tools:   [❖═════ ● Rinzler Bot Commands ● ═══════❖] :tools:  
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
@@ -344,15 +344,15 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:heavy_plus_sign: [❖═════ Other Bot Commands ═══════❖] :heavy_plus_sign:   
+:heavy_plus_sign: [❖═════ ● Other Bot Commands ● ═══════❖] :heavy_plus_sign:   
 
 ● :frame_photo: : ${prefix}avatar :arrow_right: افاتار الشخص المطلوب ●
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
-:hearts: [❖═════ المزيد قريبا ان شاء الله! ═══════❖] :hearts: 
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─═════ {✯ Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ✯} ═════─ :zap:
+:zap: ─═════ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═════─ :zap:
 
 ● The Grid™ - Official :copyright: **`);
 message.author.sendEmbed(embed)
