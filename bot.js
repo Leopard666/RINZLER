@@ -348,7 +348,7 @@ client.on('message', message => {
 
 ● :frame_photo: : ${prefix}avatar :arrow_right: افاتار الشخص المطلوب ●
 
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/aUW67Y7 ●
+● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
 :hearts: [❖═════ المزيد قريبا ان شاء الله! ═══════❖] :hearts: 
 
