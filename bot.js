@@ -18,9 +18,25 @@ const fs = require('fs');
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "!";
-/////////////////////////
-////////////////////////
+const prefix = "-";
+client.on('ready', function() {
+  client.user.setStatus("dnd");
+    var ms = 10000 ;
+    var setGame = ['★ -Help | MusicBot ★','The Grid™ | Server ' ];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
+    }, ms);
+	console.log(`Hes Ready Now ${client.user.username}`);
+});
 
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
@@ -31,19 +47,8 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `ping`) {
-    let embed = new Discord.RichEmbed()
-    .setColor(3447003)
-    .setTitle("Pong!!")
-    .setDescription(`${client.ping} ms,`)
-    .setFooter(`Requested by | ${msg.author.tag}`);
-    msg.delete().catch(O_o=>{})
-    msg.channel.send(embed);
-    }
 });
-/////////////////////////
-////////////////////////
-//////////////////////
+
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -71,19 +76,7 @@ client.on('message', async msg =>{
         }
     };
 });
-/////////////////////////
-////////////////////////
-//////////////////////
-/////////////////////////
-////////////////////////
-//////////////////////
 
-/////////////////////////
-////////////////////////
-//////////////////////
-/////////////////////////
-////////////////////////
-//////////////////////
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
@@ -309,35 +302,120 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`**${song.title}**, is now playing!`);
 }
 
-
 client.on('message', message => {
-    if (message.content === 'help') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (!)**')
-        .addField('play', 'لتشغيل اغنية')
-        .addField('join', 'دخول رومك الصوتي')
-        .addField('disconnect', 'الخروج من رومك الصوتي')
-        .addField('skip', 'تخطي الأغنية')
-        .addField('pause', 'ايقاف الاغنية مؤقتا')
-        .addField('resume', 'تكملة الاغنية')
-        .addField('queue', 'اظهار قائمة التشغيل')
-        .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('(general_commands) لاظهار الاوامر العامة')
-      message.channel.send(helpEmbed);
-    }
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+    
+   message.channel.send('**:white_check_mark: Done" , " تــــم ارســالك في الخــاص :e_mail:**');
+   const embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username,message.author.avatarURL)
+  .setColor('RANDOM')
+  .setDescription(`**
+:notes:  [❖═════ ● برفكس البوت (!) / أوامر الميوزك ● ═══════❖] :notes: 
+  
+❖═════════════════════════════════════❖  
+
+● :headphones: : ${prefix}play :arrow_right: لتشغيل اغنية ●
+
+● :headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
+
+● :headphones: : ${prefix}queue :arrow_right: اظهار قائمة التشغيل ●
+
+● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
+
+● :headphones: : ${prefix}np :arrow_right: اظهار الاغنية اللي انت مشغلها حاليا ●
+
+● :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة ●
+
+● :headphones: : ${prefix}join :arrow_right: دخول رومك الصوتي ●
+
+● :headphones: : ${prefix}disconnect :arrow_right: الخروج من رومك الصوتي ●
+
+● :headphones: : ${prefix}pause :arrow_right: ايقاف الاغنية مؤقتا ●
+
+
+❖═════════════════════════════════════❖
+
+:tools:   [❖═════ Rinzler Bot Commands ═══════❖] :tools:  
+
+● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
+
+● :signal_strength: : ${prefix}Ping :arrow_right: BOT PING ●
+
+❖═════════════════════════════════════❖
+
+:tools:   [❖═════ Other Bot Commands ═══════❖] :tools:  
+
+● :frame_photo: : ${prefix}avatar :arrow_right: افاتار الشخص المطلوب ●
+
+●●●●●●●●●● المزيد قريبا ان شاء الله! ●●●●●●●●●●●
+
+❖═════════════════════════════════════❖
+
+   :zap: RINZLER BOT MADE BY : THE RARE RANGER :zap:
+ **`);
+
+message.author.sendEmbed(embed)
+  }
 });
 
 client.on('message', message => {
-    if (message.content === 'general_commands') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر عامة...**')
-        .addField('avatar', "افاتار الشخص المطلوب")
-        .addField('gif', 'البحث عن جيف انت تطلبه')
-        .addField('ping', 'معرفة ping البوت')
-        .setFooter('المزيد قريبا ان شاء الله!')
-      message.channel.send(helpEmbed);
-    }
+  if(!message.channel.guild) return;
+if (message.content.startsWith('-ping')) {
+if(!message.channel.guild) return;
+var msg = `${Date.now() - message.createdTimestamp}`
+var api = `${Math.round(client.ping)}`
+if (message.author.bot) return;
+let embed = new Discord.RichEmbed()
+.setAuthor(message.author.username,message.author.avatarURL)
+.setColor('RANDOM')
+.addField('**Time Taken:**',msg + " ms :signal_strength: ")
+.addField('**WebSocket:**',api + " ms :signal_strength: ")
+message.channel.send({embed:embed});
+}
+});
+
+client.on('message', message => {
+  if (message.content === ('-Rinzler')) {
+  message.channel.send({
+      embed: new Discord.RichEmbed()
+          .setAuthor(client.user.username,client.user.avatarURL)
+          .setThumbnail(client.user.avatarURL)
+          .setColor('RANDOM')
+          .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+          .addField('**Servers**📚 :', [client.guilds.size], true)
+          .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
+          .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
+          .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
+          .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
+          .setFooter(message.author.username, message.author.avatarURL)
+  })
+}
+});
+
+client.on('message', message => {
+    var prefix = "-"
+  if (message.author.x5bz) return;
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+    if(command === "stats") {
+        var time = process.uptime();
+        var uptime = (time + "").toHHMMSS();
+
+        const embed = new Discord.RichEmbed()
+        .setTitle(":tools: Stats")
+        .setColor(0x009688)
+        .setDescription( 
+        ":crown: " +              "Servers: " + client.guilds.size + "\n" + 
+        ":bust_in_silhouette: " + "Users: " + client.users.size + "\n" + 
+        ":clock12: " +            "Uptime: " + uptime)
+        message.channel.send({embed});
+
+  }
 });
 
 client.login(process.env.BOT_TOKEN);
