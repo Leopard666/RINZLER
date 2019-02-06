@@ -176,14 +176,14 @@ client.on('message', async msg => {
         if (!serverQueue) return msg.channel.send("** :x: There Is No Queue To Stop The Music ! :x: **");
         
 		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end(':x: **Music Has Been Stopped & Disconnected From Your Voice Channel ** :x: ');
+		serverQueue.connection.dispatcher.end(':x: **Music Has Been Stopped & Disconnected From Your Voice Channel !** :x: ');
         return undefined;
         
 	} else if (command === `volume`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
 		if (!serverQueue) return msg.channel.send(':x: **You Only Can Use This Command While Music Is Playing ! :x: **');
-        if (!args[1]) return msg.channel.send(`:loud_sound: **The Rinzler Bot Volume is :** **${serverQueue.volume}**`);
+        if (!args[1]) return msg.channel.send(`:loud_sound: **The Rinzler Bot Volume is :** **${serverQueue.volume}** :loud_sound:`);
         
 		serverQueue.volume = args[1];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 50);
@@ -266,7 +266,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(`**${song.title}**, **Just Added To The Queue! :thumbsup: **`);
+		else return msg.channel.send(`:notes: **${song.title}**, **Just Added To The Queue ! :thumbsup: **`);
 	} 
 	return undefined;
 }
@@ -291,7 +291,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`**${song.title}**,** is Now Playing ! :notes:**`);
+	serverQueue.textChannel.send(`:notes: **${song.title}**▌** is Now Playing ! :notes:**`);
 }
 
 client.on('message', message => {
