@@ -319,8 +319,6 @@ client.on('message', message => {
 
 ● :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة ●
 
-● :headphones: : ${prefix}join :arrow_right: دخول رومك الصوتي ●
-
 ● :headphones: : ${prefix}stop :arrow_right: الخروج من رومك الصوتي ●
 
 ● :headphones: : ${prefix}pause :arrow_right: ايقاف الاغنية مؤقتا ●
