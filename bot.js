@@ -1,24 +1,16 @@
 const Discord = require('discord.js');
-
 const Util = require('discord.js');
-
 const getYoutubeID = require('get-youtube-id');
-
 const fetchVideoInfo = require('youtube-info');
-
 const YouTube = require('simple-youtube-api');
-
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-
 const queue = new Map();
-
 const ytdl = require('ytdl-core');
-
 const fs = require('fs');
-
 const client = new Discord.Client({disableEveryone: true});
-
 const prefix = "-";
+
+
 client.on('ready', function() {
   client.user.setStatus("dnd");
     var ms = 10000 ;
@@ -143,7 +135,7 @@ client.on('message', async msg => {
 					.setColor("#f7abab")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
-/////////////////					
+					
 					try {
 
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
@@ -170,12 +162,12 @@ client.on('message', async msg => {
             
         }
         
-	} else if (command === `skip`) {
-
-		if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
+	    } else if (command === `skip`) {
+ 
+        if (!msg.member.voiceChannel) return msg.channel.send("You Must be in a Voice channel to Run the Music commands!");
         if (!serverQueue) return msg.channel.send("There is no Queue to skip!!");
-
-		serverQueue.connection.dispatcher.end('Ok, skipped!');
+ 
+        serverQueue.connection.dispatcher.end('Ok, skipped!');
         return undefined;
         
 	} else if (command === `stop`) {
