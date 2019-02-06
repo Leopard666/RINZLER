@@ -91,7 +91,7 @@ client.on('message', async msg => {
         
         if (!permissions.has('CONNECT')) {
 
-			return msg.channel.send("I don't have enough permissions to join your voice channel!");
+			return msg.channel.send("**:x: I Don't Have Enough Permissions To Join In Your Voice Channel ! :x:**");
         }
         
 		if (!permissions.has('SPEAK')) {
@@ -315,13 +315,13 @@ client.on('message', message => {
 
 ● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
 
-● :headphones: : ${prefix}np :arrow_right: اظهار الاغنية اللي انت مشغلها حاليا ●
+● :headphones: : ${prefix}nowplaying :arrow_right: اظهار الاغنية اللي انت مشغلها حاليا ●
 
 ● :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة ●
 
 ● :headphones: : ${prefix}join :arrow_right: دخول رومك الصوتي ●
 
-● :headphones: : ${prefix}disconnect :arrow_right: الخروج من رومك الصوتي ●
+● :headphones: : ${prefix}stop :arrow_right: الخروج من رومك الصوتي ●
 
 ● :headphones: : ${prefix}pause :arrow_right: ايقاف الاغنية مؤقتا ●
 
