@@ -128,7 +128,7 @@ client.on('message', async msg => {
 					var videos = await youtube.searchVideos(searchString, 5);
 					let index = 0;
                     const embed1 = new Discord.RichEmbed()
-                    .setTitle("**:mag_right: Youtube Searching Results :mag_right: :**")
+                    .setTitle("**:mag_right: Youtube Searching Results :notes: :**")
                     .setDescription(`
                     ${videos.map(video2 => `${++index}. **${video2.title}**`).join('\n')}`)
                     
@@ -167,7 +167,7 @@ client.on('message', async msg => {
         if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
         if (!serverQueue) return msg.channel.send("** :x: There Is No Queue To Skip The Music ! :x: **");
  
-        serverQueue.connection.dispatcher.end('Ok, skipped!:track_next: ');
+        serverQueue.connection.dispatcher.end('**Ok, skipped ! :track_next:**');
         return undefined;
         
 	} else if (command === `stop`) {
