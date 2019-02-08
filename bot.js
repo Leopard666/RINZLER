@@ -30,26 +30,6 @@ client.on('ready', function() {
 	console.log(`Hes Ready Now ${client.user.username}`);
 });
 
-var version = '11.0.0';
-client.on('message', message => {
-if (message.content === prefix+'bot'){
-     if(!message.channel.guild) return message.reply('** This command only for servers**');
-var embed = new Discord.RichEmbed()//تا
-    .setAuthor(client.user.username, client.user.avatarURL)
-.setDescription(`** Ping :** ${Date.now() - message.createdTimestamp}
- **Servers :** ${client.guilds.size}
- **Users :** ${client.users.size}
- **Channels :** ${client.channels.size}
- **RAM Usage :** ${(process.memoryUsage().rss / 1048576).toFixed()}MB
- **Discord.js :** v${version}
- **UpTime :** ${timeCon(process.uptime())}
- **Node :** ${process.version}`)
-     .setFooter('all copyrights reserved ©',client.user.avatarURL)
- .setFooter(`Fury Bot`, client.user.avatarURL)
-    message.channel.sendEmbed(embed)
-    console.log('[bot] Send By: ' + message.author.username)
-}
-});
 
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
@@ -62,14 +42,16 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
+var version = '1.5';
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "info")) {
+    if (message.content.startsWith(prefix + "stats")) {
+    if(!message.channel.guild) return message.reply('** This command only for servers**');
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Fury Bot`` ')
+            .setTitle('``Rinzler Stats`` ')
             .addField('``Uptime``', [timeCon(process.uptime())], true)
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
@@ -78,9 +60,10 @@ client.on('message', message => {
             .addField('``Users``' ,`[ ${client.users.size} ]` , true)
             .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
-                  .addField('``My Prefix``' , `>` , true)
+            .addField('``Node``' , `[${process.version} ]` , true)
+                  .addField('``My Prefix``' , `-` , true)
                   .addField('``My Language``' , `[ Java Script ]` , true)
-                  .setFooter('By | iiTzEnd')
+                  .setFooter('By | TheRareRanger')
     })
 }
 });
@@ -386,7 +369,6 @@ client.on('message', message => {
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
-● :signal_strength: : ${prefix}Ping :arrow_right: BOT PING ●
 
 ❖═════════════════════════════════════❖
 
@@ -405,21 +387,6 @@ message.author.sendEmbed(embed)
   }
 });
 
-client.on('message', message => {
-  if(!message.channel.guild) return;
-if (message.content.startsWith('-ping')) {
-if(!message.channel.guild) return;
-var msg = `${Date.now() - message.createdTimestamp}`
-var api = `${Math.round(client.ping)}`
-if (message.author.bot) return;
-let embed = new Discord.RichEmbed()
-.setAuthor(message.author.username,message.author.avatarURL)
-.setColor('RANDOM')
-.addField('**Time Taken:**',msg + " ms :signal_strength: ")
-.addField('**WebSocket:**',api + " ms :signal_strength: ")
-message.channel.send({embed:embed});
-}
-});
 
 client.on('message', message => {
   if (message.content === ('-Rinzler')) {
@@ -437,31 +404,6 @@ client.on('message', message => {
           .setFooter(message.author.username, message.author.avatarURL)
   })
 }
-});
-
-client.on('message', message => {
-    var prefix = "-"
-  if (message.author.x5bz) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-    if(command === "stats") {
-        var time = process.uptime();
-        var uptime = (time + "").toHHMMSS();
-
-        const embed = new Discord.RichEmbed()
-        .setTitle(":tools: Stats")
-        .setColor(0x009688)
-        .setDescription( 
-        ":crown: " +              "Servers: " + client.guilds.size + "\n" + 
-        ":bust_in_silhouette: " + "Users: " + client.users.size + "\n" + 
-        ":clock12: " +            "Uptime: " + uptime)
-        message.channel.send({embed});
-
-  }
 });
 
 
