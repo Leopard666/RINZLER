@@ -30,6 +30,62 @@ client.on('ready', function() {
 	console.log(`Hes Ready Now ${client.user.username}`);
 });
 
+var version = '11.0.0';
+client.on('message', message => {
+if (message.content === prefix+'bot'){
+     if(!message.channel.guild) return message.reply('** This command only for servers**');
+var embed = new Discord.RichEmbed()//تا
+    .setAuthor(client.user.username, client.user.avatarURL)
+.setDescription(`** Ping :** ${Date.now() - message.createdTimestamp}
+ **Servers :** ${client.guilds.size}
+ **Users :** ${client.users.size}
+ **Channels :** ${client.channels.size}
+ **RAM Usage :** ${(process.memoryUsage().rss / 1048576).toFixed()}MB
+ **Discord.js :** v${version}
+ **UpTime :** ${timeCon(process.uptime())}
+ **Node :** ${process.version}`)
+     .setFooter('all copyrights reserved ©',client.user.avatarURL)
+ .setFooter(`Fury Bot`, client.user.avatarURL)
+    message.channel.sendEmbed(embed)
+    console.log('[bot] Send By: ' + message.author.username)
+}
+});
+
+function timeCon(time) {
+    let days = Math.floor(time % 31536000 / 86400)
+    let hours = Math.floor(time % 31536000 % 86400 / 3600)
+    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
+    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
+    days = days > 9 ? days : '0' + days
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
+}
+client.on('message', message => {
+    if (message.content.startsWith(prefix + "info")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``INFO Fury Bot`` ')
+            .addField('``Uptime``', [timeCon(process.uptime())], true)
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``servers``', [client.guilds.size], true)
+            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
+                  .addField('``My Prefix``' , `>` , true)
+                  .addField('``My Language``' , `[ Java Script ]` , true)
+                  .setFooter('By | iiTzEnd')
+    })
+}
+});
+
+
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
