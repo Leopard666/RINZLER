@@ -45,13 +45,13 @@ function timeCon(time) {
 var version = '1.5';
 client.on('message', message => {
     if (message.content.startsWith(prefix + "stats")) {
-    if(!message.channel.guild) return message.reply('** This command only for servers**');
+    if(!message.channel.guild) return message.reply('** :x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``Rinzler Stats`` ')
+            .setTitle('``Rinzler STATS`` ')
             .addField('``Uptime``', [timeCon(process.uptime())], true)
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
