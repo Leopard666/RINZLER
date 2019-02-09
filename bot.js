@@ -140,7 +140,7 @@ client.on('message', async msg => {
 
 		if (!permissions.has('EMBED_LINKS')) {
 
-			return msg.channel.sendMessage("** :x: I Don't Have Enough Permissions To Insert A URLs ! :x:**")
+			return msg.channel.send("** :x: I Don't Have Enough Permissions To Insert A URLs ! :x:**")
 		}
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -405,6 +405,5 @@ client.on('message', message => {
   })
 }
 });
-
 
 client.login(process.env.BOT_TOKEN);
