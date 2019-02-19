@@ -399,7 +399,7 @@ client.on('message',async message => {
                msg.edit('**:arrows_counterclockwise: Rinzler Restarting...**');
             },2000);
         });
-        console.log(`${message.author.tag} [ ${message.author.id} ] Jarvis Has Restarted Successfully.`);
+        console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
         console.log(`Restarting..`);
         setTimeout(() => {
             client.destroy();
