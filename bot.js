@@ -13,7 +13,7 @@ const prefix = "-";
 
 client.on('ready', function(){//npm i ms 
     var ms = 10000 ;
-    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE DAMNATION ★`];
+    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
     var i = -1;
     var j = 0;
     setInterval(function (){
