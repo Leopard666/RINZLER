@@ -12,6 +12,7 @@ const prefix = "-";
 
 
 client.on('ready', function(){//npm i ms 
+ client.user.setStatus("dnd")
     var ms = 10000 ;
     var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
     var i = -1;
