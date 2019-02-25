@@ -11,10 +11,9 @@ const client = new Discord.Client({disableEveryone: true});
 const prefix = "-";
 
 
-client.on('ready', function() {
-  client.user.setStatus("dnd");
+client.on('ready', function(){//npm i ms 
     var ms = 10000 ;
-    var setGame = ['★ -Help | MusicBot ★','The Grid™ | Server ' ];
+    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE DAMNATION ★`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -27,7 +26,7 @@ client.on('ready', function() {
         i = i+j;
         client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
     }, ms);
-	console.log(`Hes Ready Now ${client.user.username}`);
+
 });
 
 
