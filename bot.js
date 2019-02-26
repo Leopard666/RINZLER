@@ -24,6 +24,7 @@ function timeCon(time) {
 var version = '1.2';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "RINZLER IS BACK ONLINE NOW")) {
+ if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
