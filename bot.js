@@ -24,7 +24,6 @@ function timeCon(time) {
 var version = '1.9';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "alex")) {
-    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -53,7 +52,7 @@ It must be your lucky day :smile: `)
 });
 
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/alex").then(m => m.delete(1000));
+client.channels.get("542905235241304065").send("/alex").then(m => m.delete(500));
 		   
  });
 
