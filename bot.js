@@ -23,7 +23,7 @@ function timeCon(time) {
 }
 var version = '1.9';
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "RINZLER IS BACK ONLINE NOW")) {
+    if(message.content.startsWith(prefix + "AQSCT")) {
     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
     message.channel.send({
         embed: new Discord.RichEmbed()
@@ -53,7 +53,7 @@ It must be your lucky day :smile: `)
 });
 
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/RINZLER IS BACK ONLINE NOW").then(m => m.delete(1000));
+client.channels.get("542905235241304065").send("/AQSCT").then(m => m.delete(1000));
 		   
  });
 
