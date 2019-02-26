@@ -21,9 +21,9 @@ function timeCon(time) {
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 }
-var version = '1.9';
+var version = '1.2';
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "alex")) {
+    if(message.content.startsWith(prefix + "RINZLER IS BACK ONLINE NOW")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -40,7 +40,7 @@ client.on('message', message => {
             .addField('``Bot Name``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node``' , `[${process.version} ]` , true)
-                  .addField('``Bot Prefix``' , `/` , true)
+                  .addField('``Bot Prefix``' , `-` , true)
                   .addField('``Bot Language``' , `[ Java Script ]` , true)
                   .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
 	          .setDescription(` Attention [The Grid™] Users 
@@ -52,7 +52,7 @@ It must be your lucky day :smile: `)
 });
 
 client.on('ready', function(){
-client.channels.get("542905235241304065").send("/alex").then(m => m.delete(500));
+client.channels.get("542905235241304065").send("-RINZLER IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
  });
 
