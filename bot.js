@@ -29,7 +29,7 @@ function timeCon(time) {
 var version = '1.2';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "RINZLER IS BACK ONLINE NOW")) {
- if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+ if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -80,7 +80,7 @@ function timeCon(time) {
 var version = '1.2';
 client.on('message', message => {
     if(message.content.startsWith(prefix + "stats")) {
- if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**');
+ if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
@@ -401,7 +401,7 @@ client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
     
-   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**');
+   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
@@ -444,9 +444,10 @@ client.on('message', message => {
 
 :hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
 
-:zap: ─═══ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═══─ :zap:
-
-● The Grid™ - Official :copyright: **`);
+:zap: ─═══ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═══─ :zap:**`)
+.setAuthor(message.guild.name, message.guild.iconURL)   
+.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.setTimestamp()   
 message.author.sendEmbed(embed)
   }
 });
@@ -456,13 +457,13 @@ message.author.sendEmbed(embed)
 
 client.on('message',async message => {
     if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**');
+        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Restarting..**');
+               msg.edit('**:arrows_counterclockwise: Rinzler Restarting..**').then(m => m.delete(60000));
             },1000);
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Restarting...**');
+               msg.edit('**:arrows_counterclockwise: Rinzler Restarting...**').then(m => m.delete(60000));
             },2000);
         });
         console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
@@ -483,6 +484,7 @@ client.on('message', message => {
           .setAuthor(client.user.username,client.user.avatarURL)
           .setThumbnail(client.user.avatarURL)
           .setColor('RANDOM')
+	  .setAuthor(message.guild.name, message.guild.iconURL)
           .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
           .addField('**Servers**📚 :', [client.guilds.size], true)
           .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
@@ -490,6 +492,8 @@ client.on('message', message => {
           .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
           .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
           .setFooter(message.author.username, message.author.avatarURL)
+	  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+          .setTimestamp()
   })
 }
 });
