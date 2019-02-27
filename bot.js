@@ -484,7 +484,6 @@ client.on('message', message => {
           .setAuthor(client.user.username,client.user.avatarURL)
           .setThumbnail(client.user.avatarURL)
           .setColor('RANDOM')
-	  .setAuthor(message.guild.name, message.guild.iconURL)
           .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
           .addField('**Servers**📚 :', [client.guilds.size], true)
           .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
