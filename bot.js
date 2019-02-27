@@ -490,7 +490,6 @@ client.on('message', message => {
           .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
           .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
           .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
-          .setFooter(client.author.username, client.author.avatarURL)
 	  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
           .setTimestamp()
   })
