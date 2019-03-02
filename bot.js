@@ -406,7 +406,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:tools:   [❖═══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ════❖] :tools:  
+:tools:   [❖═══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ═══❖] :tools:  
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
@@ -417,7 +417,7 @@ client.on('message', message => {
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
+:hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
    
 .setAuthor(message.guild.name, message.guild.iconURL)   
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
