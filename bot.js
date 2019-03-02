@@ -142,33 +142,7 @@ client.on('message', async msg =>{
 
 });
 
-client.on('message', async msg =>{
-	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
-    
-    let args = msg.content.split(' ');
-
-	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
-
-    if(command === `avatar`){
-	if(msg.channel.type === 'dm') return msg.channel.send("** :x: Nope ! U Can't Use Avatar Command in DMs :x:**")
-        let mentions = msg.mentions.members.first()
-        if(!mentions) {
-          let sicon = msg.author.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setImage(msg.author.avatarURL)
-          .setColor("#5074b3")
-          msg.channel.send({embed})
-        } else {
-          let sicon = mentions.user.avatarURL
-          let embed = new Discord.RichEmbed()
-          .setColor("#5074b3")
-          .setImage(sicon)
-          msg.channel.send({embed})
-        }
-    };
-});
+// ==================================================================
 
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
@@ -404,6 +378,9 @@ client.on('message', message => {
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
+  .setThumbnail(client.user.avatarURL)
+  .addField('``BOT - VERSION :``' , `[ v1.2 ]`)
+  .addField('**BOT - OWNER :**👑 :' , `[<@480540559233122324>]`)
   .setColor('RANDOM')
   .setDescription(`**
 :notes:  [❖═════ ● برفكس البوت (!) & أوامر الميوزك ● ═══════❖] :notes: 
@@ -442,9 +419,8 @@ client.on('message', message => {
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
-:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts: 
-
-:zap: ─═══ {✯ ● Bot Made By ŦĐŇ™漫Ranger√ ⚡#4474 ● ✯} ═══─ :zap:**`)
+:hearts: [❖═════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
+   
 .setAuthor(message.guild.name, message.guild.iconURL)   
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
 .setTimestamp()   
@@ -460,10 +436,10 @@ client.on('message',async message => {
         if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
         message.channel.send('**Restarting.**').then(msg => {
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Restarting..**').then(m => m.delete(60000));
+               msg.edit('**:arrows_counterclockwise: Rinzler Is Restarting Now..**').then(m => m.delete(60000));
             },1000);
             setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Restarting...**').then(m => m.delete(60000));
+               msg.edit('**:arrows_counterclockwise: Rinzler Is Restarting Now...**').then(m => m.delete(60000));
             },2000);
         });
         console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
@@ -484,13 +460,14 @@ client.on('message', message => {
           .setAuthor(client.user.username,client.user.avatarURL)
           .setThumbnail(client.user.avatarURL)
           .setColor('RANDOM')
+	  .addField('**BOT - VERSION** :robot: :' , `[ v1.2 ]`, true)
           .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
           .addField('**Servers**📚 :', [client.guilds.size], true)
           .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
           .addField('**Users**🔮 :' ,`[ ${client.users.size} ]` , true)
           .addField('**Bot Name**🔰 :' , `[ ${client.user.tag} ]` , true)
           .addField('**Bot Owner**👑 :' , `[<@480540559233122324>]` , true)
-	  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+	  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
           .setTimestamp()
   })
 }
