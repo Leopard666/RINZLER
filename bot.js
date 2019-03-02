@@ -379,8 +379,8 @@ client.on('message', message => {
    const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username,message.author.avatarURL)
   .setThumbnail(client.user.avatarURL)
-  .addField('``BOT - VERSION :``' , `[ v1.2 ]`)
-  .addField('**BOT - OWNER :**👑 :' , `[<@480540559233122324>]`)
+  .addField('**BOT - VERSION **:' , `[ v1.2 ]`)
+  .addField('**BOT - OWNER **👑 :' , `[<@480540559233122324>]`)
   .setColor('RANDOM')
   .setDescription(`**
 :notes:  [❖═════ ● برفكس البوت (!) & أوامر الميوزك ● ═══════❖] :notes: 
@@ -414,8 +414,6 @@ client.on('message', message => {
 ❖═════════════════════════════════════❖
 
 :heavy_plus_sign: [❖═════ ● Other Bot Commands ● ═══════❖] :heavy_plus_sign:   
-
-● :frame_photo: : ${prefix}avatar :arrow_right: افاتار الشخص المطلوب ●
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
 
@@ -460,7 +458,7 @@ client.on('message', message => {
           .setAuthor(client.user.username,client.user.avatarURL)
           .setThumbnail(client.user.avatarURL)
           .setColor('RANDOM')
-	  .addField('**BOT - VERSION** :robot: :' , `[ v1.2 ]`, true)
+	  .addField('**Bot Version** :robot: :' , `[ v1.2 ]`, true)
           .addField('**Bot Ping**🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
           .addField('**Servers**📚 :', [client.guilds.size], true)
           .addField('**Channels**📝 :' , `[ ${client.channels.size} ]` , true)
