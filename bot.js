@@ -44,17 +44,17 @@ client.on('message', message => {
             .addField('``TG - Servers :``', [client.guilds.size], true)
             .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+	    .addField('``TG Server Region :``' , `[ message.guild.region ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[${process.version} ]` , true)
-                  .addField('``Bot Prefix :``' , `-` , true)
+                  .addField('``Bot Prefix :``' , `👑 [FOR ADMINS] 👑` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+                  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	          .setDescription(` **● Attention [The Grid™] Users 
+	          .setDescription(`**:robot: ● Attention [The Grid™] Users 
 [RINZLER] Has Returned From The Darkness Aka Back Online
-It Must Be Your Lucky Day ! ●** `)
-
+It Must Be Your Lucky Day ! ● ** `)
     })
 }
 });
@@ -95,12 +95,13 @@ client.on('message', message => {
             .addField('``TG - Servers :``', [client.guilds.size], true)
             .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
             .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
+	    .addField('``TG Server Region :``' , `[ message.guild.region ]` , true)
             .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
             .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
             .addField('``Bot Node :``' , `[${process.version} ]` , true)
-                  .addField('``Bot Prefix :``' , `-` , true)
+                  .addField('``Bot Prefix :``' , `👑 [FOR ADMINS] 👑` , true)
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+                  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
 
     })
