@@ -406,7 +406,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:tools:   [❖═════ ● Rinzler Bot Commands ● ═══════❖] :tools:  
+:tools:   [❖════ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══════❖] :tools:  
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
