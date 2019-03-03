@@ -447,25 +447,20 @@ message.author.sendEmbed(embed)
 // ==================================================================
 
 
-client.on('message',async message => {
-    if(message.content.startsWith(prefix + "restart")) {
-        if(message.author.id !== "480540559233122324") return message.reply('**❎ | You Aren\'t The Bot Owner !**').then(m => m.delete(60000));
-        message.channel.send('**Restarting.**').then(msg => {
-            setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Is Restarting Now..**').then(m => m.delete(60000));
-            },1000);
-            setTimeout(() => {
-               msg.edit('**:arrows_counterclockwise: Rinzler Is Restarting Now...**').then(m => m.delete(60000));
-            },2000);
-        });
-        console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
-        console.log(`Restarting..`);
-        setTimeout(() => {
-            client.destroy();
-            client.login(process.env.BOT_TOKEN);
-        },3000);
+client.on('message', message => {
+    if(message.content === prefix + "restart") {
+	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
+          client.channels.get("542905235241304065").send("⚠️ **RINZLER IS RESTARTING NOW.. , PLEASE WAIT** ⚠️").then(m => m.delete(60000));
+        console.log("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(`⚠️ RINZLER IS RESTARTING NOW... ⚠️`);
+        console.log("===============================================\n\n");
+        client.destroy();
+        client.login(process.env.BOT_TOKEN);
+	    console.log(`RINZLER IS BACK ONLINE NOW AND READY TO FIGHT`);
     }
-})
+  
+  });
+
 
 // ==================================================================
 
