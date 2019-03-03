@@ -397,8 +397,8 @@ client.on('message', message => {
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
-  .addField('**BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
-  .addField('**BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
+  .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
+  .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
   .setColor('RANDOM')
   .setDescription(`**
 :notes:  [❖═════ ● برفكس البوت (!) & أوامر الميوزك ● ═══════❖] :notes: 
