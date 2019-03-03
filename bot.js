@@ -399,6 +399,7 @@ client.on('message', message => {
   .setThumbnail(client.user.avatarURL)
   .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
   .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
+  .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
 :notes:  [❖═════ ● برفكس البوت (!) & أوامر الميوزك ● ═══════❖] :notes: 
