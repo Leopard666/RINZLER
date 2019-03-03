@@ -150,7 +150,7 @@ client.on('guildCreate', guild => {
     var embed = new Discord.RichEmbed()
     .setThumbnail(client.user.avatarURL)
     .setColor('RANDOM')
-    .setDescription(`:heart: **🔰 شكراً لك لإضافه البوت الى سيرفرك 🔰** :heart:`)
+    .setDescription(`:heart: **شكراً لك لإضافه البوت الى سيرفرك** :heart:`)
     .addField('**● Bot Version** :robot: :' , `**[ v2.1 ]**`)
     .addField('**● Bot CMD** 🔮 :' , `**Use -help For Bot Commands**`)
     .addField('**● Bot Owner** 👑 :' , `**[ <@480540559233122324> ]**`)
