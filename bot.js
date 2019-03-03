@@ -378,7 +378,6 @@ client.on('message', message => {
     
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username,message.author.avatarURL)
   .setThumbnail(client.user.avatarURL)
   .addField('**BOT - VERSION** :robot: :' , `[ v1.2 ]`)
   .addField('**BOT - OWNER** 👑 :' , `[<@480540559233122324>]`)
@@ -420,7 +419,6 @@ client.on('message', message => {
 
 :hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
    
-.setAuthor(message.guild.name, message.guild.iconURL)   
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
 .setTimestamp()   
 message.author.sendEmbed(embed)
