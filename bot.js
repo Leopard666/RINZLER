@@ -463,7 +463,7 @@ client.on('message', message => {
             .setColor('b58900')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
-            .setTitle('**● :robot: [RINZLER] IS OFFLINE NOW !** ')
+            .setTitle('**● :robot: [RINZLER] IS REBOOTING NOW !**')
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		 });
 	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
