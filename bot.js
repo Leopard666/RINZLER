@@ -454,15 +454,18 @@ message.author.sendEmbed(embed)
 client.on('message', message => {
     if(message.content === prefix + "restart") {
 	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
-          client.channels.get("542905235241304065").send("⚠️ **RINZLER IS RESTARTING NOW.. , PLEASE WAIT** ⚠️").then(m => m.delete(60000));
-        console.log("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        console.log(`⚠️ RINZLER IS RESTARTING NOW... ⚠️`);
-        console.log("===============================================\n\n");
-        client.destroy();
-        client.login(process.env.BOT_TOKEN);
-	    console.log(`RINZLER IS BACK ONLINE NOW AND READY TO FIGHT`);
+          message.channel.send({
+	     embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('dc322f')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [RINZLER] IS OFFLINE NOW !** ')
+	    .setDescription(`**⚠️ RINZLER IS RESTARTING NOW... ⚠️**`)
     }
-  
+  }
+			       
   });
 
 
