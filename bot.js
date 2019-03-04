@@ -445,6 +445,8 @@ client.on('message', message => {
 .setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
 .setTimestamp()   
    
+message.author.sendEmbed(embed)
+   
   }
 });
 
@@ -463,7 +465,13 @@ client.on('message', message => {
 	    .setTimestamp()
             .setTitle('**● :robot: [RINZLER] IS OFFLINE NOW !** ')
 	    .setDescription(`**⚠️ RINZLER IS RESTARTING NOW... ⚠️**`)
-		  
+		 });
+	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
+            console.log(`Zeus Is Restarting Now..`);
+            setTimeout(() => {
+            client.destroy();
+            client.login(process.env.BOT_TOKEN);
+            },3000);
   })
 }
 });
