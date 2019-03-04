@@ -467,12 +467,12 @@ client.on('message', message => {
 	    .setDescription(`**⚠️ RINZLER IS RESTARTING NOW... ⚠️**`)
 		 });
 	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
-            console.log(`Zeus Is Restarting Now..`);
+            console.log(`Rinzler Is Restarting Now..`);
             setTimeout(() => {
             client.destroy();
             client.login(process.env.BOT_TOKEN);
             },3000);
-  })
+
 }
 });
 
