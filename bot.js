@@ -38,7 +38,7 @@ client.on('message', message => {
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('859900')
+            .setColor('RED')
             .setTitle('**🚀 [RINZLER] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[<@480540559233122324>]` , true)
@@ -460,11 +460,11 @@ client.on('message', message => {
 	     embed: new Discord.RichEmbed()
 	    .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('dc322f')
+            .setColor('YELLOW')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
             .setTitle('**● :robot: [RINZLER] IS OFFLINE NOW !** ')
-	    .setDescription(`**⚠️ RINZLER IS RESTARTING NOW... ⚠️**`)
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		 });
 	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
             console.log(`Rinzler Is Restarting Now..`);
