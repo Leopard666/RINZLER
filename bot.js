@@ -19,11 +19,10 @@ const prefix = "-";
 
 // ==================================================================
 
-bot.on('ready', () => {
-    bot.user.setStatus('away')
+bot.user.setStatus('away')
     bot.user.setPresence({
         game: {
-            name: 'IM REDAY',
+            name: 'IM READY',
             type: "LISTENING",
         }
     });
