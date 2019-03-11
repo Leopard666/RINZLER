@@ -534,6 +534,19 @@ client.on('message', message => {
 
 // ==================================================================
 
+
+function updatePresence(member) {
+  listenBotName = member.nickname || member.user.username;
+  client.user.setPresence({
+    game: {
+      name: `IM READY`,
+      type: 'LISTENING'
+    }
+  });
+}
+
+// ==================================================================
+
 client.login(process.env.BOT_TOKEN);
 
 // ==================================================================
