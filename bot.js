@@ -159,7 +159,7 @@ client.on('guildCreate', guild => {
     .addField('**● Bot CMD** 🔮 :' , `**Use -help For Bot Commands**`)
     .addField('**● Bot Owner** 👑 :' , `**[ <@480540559233122324> ]**`)
     .addField('**● Bot Name** 🔰 :' , `**[ ${client.user.tag} ]**`)
-    .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
     .setTimestamp()
         guild.owner.send(embed)
   });
@@ -442,7 +442,7 @@ client.on('message', message => {
 
 :hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
    
-.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ══❖')
+.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ● ══❖')
 .setTimestamp()   
    
 message.author.sendEmbed(embed)
@@ -486,7 +486,7 @@ client.on('message', message => {
 	    embed: new Discord.RichEmbed()
 	    .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
-            .setColor('b58900')
+            .setColor('dc322f')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
             .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY OWNERS !**')
@@ -516,7 +516,7 @@ client.on('message', message => {
           .addField('**Users** 🔮 :' ,`[ ${client.users.size} ]` , true)
           .addField('**Bot Name** 🔰 :' , `[ ${client.user.tag} ]` , true)
           .addField('**Bot Owner** 👑 :' , `[ <@480540559233122324> ]` , true)
-	  .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
+	  .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
           .setTimestamp()
   })
 }
