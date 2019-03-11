@@ -152,7 +152,7 @@ client.on('message', async msg =>{
 client.on('message', message => {
   if(message.content ===  prefix + 'leaveserver') {
 	     message.channel.send('**:white_check_mark: ● Done - Now Im Gonna Go Back To My HQ , Cya ● **').then(m => m.delete(60000));
-       if (message.author.id ! == 480540559233122324) return;
+       if (message.author.id !== "480540559233122324") return;
   message.guild.leave();
 	  
   }
