@@ -478,6 +478,29 @@ client.on('message', message => {
 
 // ==================================================================
 
+
+ client.on('message', message => {
+    if(message.content === prefix + "shutdown") {
+	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
+	    bot.logout(function (error) {
+            client.channels.get("542905235241304065").send({
+	    embed: new Discord.RichEmbed()
+	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('b58900')
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setTimestamp()
+            .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY OWNERS !**')
+	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+	    process.exit(1);
+
+}
+});
+		    
+
+// ==================================================================
+
+
 client.on('message', message => {
   if (message.content === ('-Rinzler')) {
   message.channel.send({
