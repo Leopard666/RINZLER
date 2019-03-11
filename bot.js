@@ -429,7 +429,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:tools:   [❖═══ ● 🔰 [ THE GRID™ - OFFICIAL ] 🔰 ● ═══❖] :tools:  
+:tools:   [❖═══ ● 🔰 [ THE GRID™ - RINZLER STATS ] 🔰 ● ═══❖] :tools:  
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
@@ -463,7 +463,7 @@ client.on('message', message => {
             .setColor('b58900')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
-            .setTitle('**● :robot: [RINZLER] IS REBOOTING NOW !**')
+            .setTitle('**● :robot: [RINZLER] IS REBOOTING NOW BY THE OWNERS !**')
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		 });
 	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
@@ -489,7 +489,7 @@ client.on('message', message => {
             .setColor('dc322f')
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	    .setTimestamp()
-            .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY OWNERS !**')
+            .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY THE OWNERS !**')
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		    });
             console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has ShutDown Successfully.`);
