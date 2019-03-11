@@ -39,7 +39,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('859900')
-            .setTitle('**🚀 [RINZLER] IS BACK ONLINE NOW & [UPDATED] 🚀** ')
+            .setTitle('**🚀 HI, IM BACK [ONLINE] NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
@@ -56,9 +56,6 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	          .setDescription(`**:robot: ● Attention [The Grid™] Users 
-[RINZLER] Has Returned From The Darkness Aka Back Online
-It Must Be Your Lucky Day ! ● ** `)
     })
 }
 });
