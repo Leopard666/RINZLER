@@ -19,19 +19,6 @@ const prefix = "-";
 
 // ==================================================================
 
-function updatePresence(member) {
-  listenBotName = member.nickname || member.user.username;
-  client.user.setStatus("idle")
-  client.user.setPresence({
-    game: {
-      name: `IM READY`,
-      type: 'LISTENING'
-    }
-  });
-}
-
-// ==================================================================
-
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
     let hours = Math.floor(time % 31536000 % 86400 / 3600)
