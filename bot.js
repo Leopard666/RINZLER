@@ -19,7 +19,8 @@ const prefix = "-";
 
 // ==================================================================
 
-client.user.setStatus('away')
+client.on('ready', function(){
+client.user.setStatus("away")
     client.user.setPresence({
         game: {
             name: 'IM READY',
