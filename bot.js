@@ -114,25 +114,24 @@ client.on('message', message => {
 
 // ==================================================================
 
+//client.on('ready', function(){//npm i ms 
+ //client.user.setStatus("dnd")
+  //  var ms = 10000 ;
+  //  var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
+  //  var i = -1;
+   // var j = 0;
+  //  setInterval(function (){
+    //    if( i == -1 ){
+            //j = 1;
+   //     }
+    //    if( i == (setGame.length)-1 ){
+    //        j = -1;
+     //   }
+     //   i = i+j;
+     //   client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
+   // }, ms);
 
-client.on('ready', function(){//npm i ms 
- client.user.setStatus("dnd")
-    var ms = 10000 ;
-    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
-    }, ms);
-
-});
+//});
 
 // ==================================================================
 
