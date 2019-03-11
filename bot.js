@@ -19,14 +19,16 @@ const prefix = "-";
 
 // ==================================================================
 
-client.on('ready', function(){
-client.user.setStatus("away")
-    client.user.setPresence({
-        game: {
-            name: 'IM READY',
-            type: "LISTENING",
-        }
-    });
+function updatePresence(member) {
+  listenBotName = member.nickname || member.user.username;
+  client.user.setStatus("idle")
+  client.user.setPresence({
+    game: {
+      name: `IM READY`,
+      type: 'LISTENING'
+    }
+  });
+}
 
 // ==================================================================
 
