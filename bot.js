@@ -19,6 +19,18 @@ const prefix = "-";
 
 // ==================================================================
 
+bot.on('ready', () => {
+    bot.user.setStatus('away')
+    bot.user.setPresence({
+        game: {
+            name: 'IM REDAY',
+            type: "LISTENING",
+        }
+    });
+});
+
+// ==================================================================
+
 function timeCon(time) {
     let days = Math.floor(time % 31536000 / 86400)
     let hours = Math.floor(time % 31536000 % 86400 / 3600)
@@ -531,19 +543,6 @@ client.on('message', message => {
   })
 }
 });
-
-// ==================================================================
-
-
-function updatePresence(member) {
-  listenBotName = member.nickname || member.user.username;
-  client.user.setPresence({
-    game: {
-      name: `IM READY`,
-      type: 'LISTENING'
-    }
-  });
-}
 
 // ==================================================================
 
