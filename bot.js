@@ -114,24 +114,24 @@ client.on('message', message => {
 
 // ==================================================================
 
-//client.on('ready', function(){//npm i ms 
- //client.user.setStatus("dnd")
-  //  var ms = 10000 ;
-  //  var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
-  //  var i = -1;
-   // var j = 0;
-  //  setInterval(function (){
-    //    if( i == -1 ){
-            //j = 1;
-   //     }
-    //    if( i == (setGame.length)-1 ){
-    //        j = -1;
-     //   }
-     //   i = i+j;
-     //   client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
-   // }, ms);
+client.on('ready', function(){//npm i ms 
+client.user.setStatus("dnd")
+    var ms = 10000 ;
+    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
+    }, ms);
 
-//});
+});
 
 // ==================================================================
 
@@ -298,12 +298,11 @@ client.on('message', async msg => {
 		
 		if (!serverQueue) return msg.channel.send('** :x: There Is No Queue ! :x:**');
 		let index = 0;
-//	//	//
 		const embedqu = new Discord.RichEmbed()
         .setTitle("**The Queue Songs :**")
         .setDescription(`
         ${serverQueue.songs.map(song => `${++index}. **${song.title}**`).join('\n')}
-**Now playing :** **${serverQueue.songs[0].title}**`)
+        **Now playing :** **${serverQueue.songs[0].title}**`)
         .setColor("#f7abab")
 		return msg.channel.sendEmbed(embedqu);
 	} else if (command === `pause`) {
