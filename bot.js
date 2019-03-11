@@ -19,8 +19,8 @@ const prefix = "-";
 
 // ==================================================================
 
-bot.user.setStatus('away')
-    bot.user.setPresence({
+client.user.setActivity('away')
+    client.user.setPresence({
         game: {
             name: 'IM READY',
             type: "LISTENING",
