@@ -439,7 +439,7 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:tools:   [❖═══ ● 🔰 [ THE GRID™ - RINZLER STATS ] 🔰 ● ═══❖] :tools:  
+:tools:   [❖═══ ● 🔰 [ RINZLER STATS ] 🔰 ● ═══❖] :tools:  
 
 ● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
 
