@@ -482,7 +482,6 @@ client.on('message', message => {
  client.on('message', message => {
     if(message.content === prefix + "shutdown") {
 	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
-	    bot.logout(function (error) {
             client.channels.get("542905235241304065").send({
 	    embed: new Discord.RichEmbed()
 	    .setAuthor(client.user.username,client.user.avatarURL)
@@ -493,12 +492,12 @@ client.on('message', message => {
             .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY OWNERS !**')
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		    });
+            console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has ShutDown Successfully.`);
             setTimeout(() => {
             client.destroy();
-
+            },3000);
 }
-});
-    
+});    
 
 // ==================================================================
 
