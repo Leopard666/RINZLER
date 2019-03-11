@@ -492,11 +492,13 @@ client.on('message', message => {
 	    .setTimestamp()
             .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY OWNERS !**')
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
-	    process.exit(1);
- }
+		    });
+            setTimeout(() => {
+            client.destroy();
+
 }
 });
-		    
+    
 
 // ==================================================================
 
