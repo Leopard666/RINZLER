@@ -61,6 +61,8 @@ client.on('message', message => {
 }
 });
 
+// ==================================================================
+
 client.on('ready', function(){
 client.channels.get("542905235241304065").send("-RINZLER IS BACK ONLINE NOW").then(m => m.delete(500));
 		   
@@ -185,18 +187,6 @@ client.on('guildCreate', guild => {
     .setTimestamp()
         guild.owner.send(embed)
   });
-
-// ==================================================================
-		
-	client.on('message', async msg => {
-    if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
-    const args = msg.content.split(' ');
-    const searchString = args.slice(1).join(' ');
-    const url = args[1] ? args[1] .replace(/<(.+)>/g, '$1') : '';
-    const serverQueue = queue.get(msg.guild.id);
-    let command = msg.content.toLowerCase().split(" ")[0];
-    command = command.slice(prefix.length)
 		
 // ==================================================================
 		
@@ -295,7 +285,7 @@ ${videos.map(video2 => `[\`${++index}\`]${video2.title}`).join('\n')}**`).then(m
 	    
 // ==================================================================
     
-    } else if (command === `vol`) {
+    } else if (command === `volume`) {
         if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .').then(message =>{message.delete(60000)})
         if (!serverQueue) return msg.channel.send('لا يوجد شيء شغآل.').then(message =>{message.delete(60000)})
         if (!args[1]) return msg.channel.send(`:loud_sound: مستوى الصوت **${serverQueue.volume}**`).then(message =>{message.delete(60000)})
@@ -305,7 +295,7 @@ ${videos.map(video2 => `[\`${++index}\`]${video2.title}`).join('\n')}**`).then(m
 	    
 // ==================================================================
     
-    } else if (command === `np`) {
+    } else if (command === `nowplaying`) {
         if (!serverQueue) return msg.channel.send('لا يوجد شيء حالي ف العمل.').then(message =>{message.delete(60000)})
         const embedNP = new Discord.RichEmbed()
     .setDescription(`:notes: الان يتم تشغيل : **${serverQueue.songs[0].title}**`).then(message =>{message.delete(60000)})
@@ -439,9 +429,9 @@ function play(guild, song) {
   .addField('Like👍 :' , `${fuck.likeCount}`, true)
   .addField('dislike👎 :' , `${fuck.dislikeCount}`, true)
   .addField('comments :' , `${fuck.commentCount}`, true)
-    .setThumbnail(`${song.xnx}`)
-    .setColor('RANDOM')
-    .setTimestamp()
+  .setThumbnail(`${song.xnx}`)
+  .setColor('RANDOM')
+  .setTimestamp()
     }).then(love => {
        
         love.delete(60000)
