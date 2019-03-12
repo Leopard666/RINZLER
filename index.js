@@ -5,6 +5,7 @@
 
 // ==================================================================
 
+const client = new Discord.Client();
 const Discord = require('discord.js'),
 YTDL = require("ytdl-core"),
 FFMPEG = require("ffmpeg"),
