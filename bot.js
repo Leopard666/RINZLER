@@ -585,7 +585,7 @@ client.on('message', message => {
    
 message.author.sendEmbed(embed)
    
-	  setTimeout(() => {
+    setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
 	   
