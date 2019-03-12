@@ -5,15 +5,15 @@
 
 // ==================================================================
 
-const client = new Discord.Client();
-const Discord = require('discord.js'),
+const Discord = require('discord.js')
+const ytdl = require("ytdl-core");
 const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyCncxr7q-96yc3uRT0Ib2L3aBlSHA9F0_A");
 const queue = new Map();
-const prefix = "-";
+const client = new Discord.Client();
 
 
 // ==================================================================
@@ -198,6 +198,8 @@ client.on('guildCreate', guild => {
     command = command.slice(prefix.length)
 		
 // ==================================================================
+		
+const prefix = "-"
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
