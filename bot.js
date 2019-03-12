@@ -282,18 +282,15 @@ client.on('message', async msg => {
             return handleVideo(video, msg, voiceChannel);
             
         }
-        
-	    } else if (command === `skip`) {
- 
+      
+	} else if (command === `skip`) {
         if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
         if (!serverQueue) return msg.channel.send("** :x: There Is No Queue To Skip The Music ! :x: **");
- 
         serverQueue.connection.dispatcher.end('**Ok, skipped ! :track_next:**');
         return undefined;
-        
+      
 	} else if (command === `stop`) {
-
-		if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
+	if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
         if (!serverQueue) return msg.channel.send("** :x: There Is No Queue To Stop The Music ! :x: **");
         
 		serverQueue.songs = [];
@@ -301,7 +298,6 @@ client.on('message', async msg => {
         return undefined;
         
 	} else if (command === `volume`) {
-
 		if (!msg.member.voiceChannel) return msg.channel.send("** :x: You Must Be In A Voice Channel To Run The Music Commands ! :x:**");
 		if (!serverQueue) return msg.channel.send(':x: **You Only Can Use This Command While Music Is Playing ! :x: **');
         if (!args[1]) return msg.channel.send(`:loud_sound: **The Rinzler Bot Volume is :** **${serverQueue.volume}** :loud_sound:`);
@@ -349,7 +345,24 @@ client.on('message', async msg => {
 
 	return undefined;
 });
-
+    return undefined;
+async function handleVideo(video, msg, voiceChannel, playlist = false) {
+    const serverQueue = queue.get(msg.guild.id);
+    const song = {
+        id: video.id,
+        title: Util.escapeMarkdown(video.title),
+        url: `https://www.youtube.com/watch?v=${video.id}`,
+        time:`${video.duration.hours}:${video.duration.minutes}:${video.duration.seconds}`,
+        xnx:`${video.thumbnails.high.url}`,
+        best:`${video.channel.title}`,
+        bees:`${video.raw.snippet.publishedAt}`,
+        shahd:`${video.raw.kind}`,
+        zg:`${video.raw.snippet.channelId}`,
+        views:`${video.raw.views}`,
+        like:`${video.raw.likeCount}`,
+        dislike:`${video.raw.dislikeCount}`,
+        hi:`${video.raw.id}`
+    };
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
 	console.log(video);
