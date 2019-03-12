@@ -277,8 +277,8 @@ ${videos.map(video2 => `[\`${++index}\`]${video2.title}`).join('\n')}**`).then(m
 // ==================================================================
     
     } else if (command === `stop`) {
-        if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .').then(message =>{message.delete(60000)})
-        if (!serverQueue) return msg.channel.send('لا يتوفر مقطع لإيقآفه');
+        if (!msg.member.voiceChannel) return msg.channel.send('**:no_entry: أنت لست بروم صوتي :no_entry:**').then(message =>{message.delete(60000)})
+        if (!serverQueue) return msg.channel.send('**:no_entry: لا يتوفر مقطع لإيقآفه :no_entry:**');
         serverQueue.songs = [];
         serverQueue.connection.dispatcher.end('تم إيقآف هذآ المقطع').then(message =>{message.delete(60000)})
         return undefined;
@@ -419,7 +419,7 @@ function play(guild, song) {
     dislike: `${fuck.dislikeCount}`
   }
     serverQueue.textChannel.send({embed : new Discord.RichEmbed()
-  .setTitle(`**${fuck.title}**`)
+  .setTitle(':notes: Now Playing :' , `**${fuck.title}**`)
   .setURL(fuck.url)
   .addField('Time The Video :' , `${song.time}`, true)
   .addField('Channel Name :' , `${song.best}`, true)
@@ -427,15 +427,13 @@ function play(guild, song) {
   .addField('Video Created at :' , `${fuck.datePublished}`, true)
   .addField('Views :' , `${fuck.views}`, true)
   .addField('Like👍 :' , `${fuck.likeCount}`, true)
-  .addField('dislike👎 :' , `${fuck.dislikeCount}`, true)
-  .addField('comments :' , `${fuck.commentCount}`, true)
+  .addField('Dislike👎 :' , `${fuck.dislikeCount}`, true)
+  .addField('Comments :' , `${fuck.commentCount}`, true)
   .setThumbnail(`${song.xnx}`)
   .setColor('RANDOM')
   .setTimestamp()
-    }).then(love => {
-       
-        love.delete(60000)
-   
+  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+
  //.then(message =>{message.delete(2000)})
  
 })
