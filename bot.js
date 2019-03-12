@@ -12,7 +12,6 @@ FFMPEG = require("ffmpeg"),
 YouTube = require('simple-youtube-api'),
 YTapi = new YouTube(process.env.ytapikey ? process.env.ytapikey : require("./config.json").ytapikey);
 prefix = process.env.prefix ? process.env.prefix : require("./config.json").prefix,
-const prefix = "-";
 let cooldown = new Set();
 let cdseconds = 5;
 
