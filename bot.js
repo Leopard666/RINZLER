@@ -1,10 +1,13 @@
+const client = new Discord.Client();
 const Discord = require('discord.js'),
 YTDL = require("ytdl-core"),
 FFMPEG = require("ffmpeg"),
 YouTube = require('simple-youtube-api'),
+  
 YTapi = new YouTube(process.env.ytapikey ? process.env.ytapikey : require("./config.json").ytapikey);
 prefix = process.env.prefix ? process.env.prefix : require("./config.json").prefix,
 bot = new Discord.Client({
+
   messageCacheMaxSize: 10,
   messageCacheLifetime: 0,
   messageSweepInterval: 2600,
