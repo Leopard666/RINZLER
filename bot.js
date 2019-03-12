@@ -435,7 +435,7 @@ client.on('message', message => {
   .setAuthor(message.author.username,message.author.avatarURL)
   .setColor('RANDOM')
   .setDescription(`**
-:notes:  [❖═════ ● برفكس البوت (-) & أوامر الميوزك ● ═══════❖] :notes: 
+:notes:  [❖═══ ● برفكس البوت ( - ) & أوامر الميوزك ● ════❖] :notes: 
   
 ❖═════════════════════════════════════❖  
 
