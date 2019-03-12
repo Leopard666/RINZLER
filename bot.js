@@ -547,16 +547,15 @@ client.on('message', message => {
           .addField('**Bot Owner** 👑 :' , `[ <@480540559233122324> ]` , true)
 	  .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
           .setTimestamp()   
-  }  
-	  
+  
   })
 }
-	
-	
+
     setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
-
+	
+}
 	
 });
 
