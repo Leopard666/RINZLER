@@ -1,201 +1,9 @@
-// ==================================================================
-
- // THIS BOT [RINZLER] CREATED BY [THE RARE RANGER] - 2019© //
-////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
-
-// ==================================================================
-
-const client = new Discord.Client();
 const Discord = require('discord.js'),
 YTDL = require("ytdl-core"),
 FFMPEG = require("ffmpeg"),
 YouTube = require('simple-youtube-api'),
 YTapi = new YouTube(process.env.ytapikey ? process.env.ytapikey : require("./config.json").ytapikey);
 prefix = process.env.prefix ? process.env.prefix : require("./config.json").prefix,
-
-// ==================================================================
-
-function timeCon(time) {
-    let days = Math.floor(time % 31536000 / 86400)
-    let hours = Math.floor(time % 31536000 % 86400 / 3600)
-    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-    days = days > 9 ? days : '0' + days
-    hours = hours > 9 ? hours : '0' + hours
-    minutes = minutes > 9 ? minutes : '0' + minutes
-    seconds = seconds > 9 ? seconds : '0' + seconds
-    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
-}
-var version = '1.2';
-client.on('message', message => {
-    if(message.content.startsWith(prefix + "RINZLER IS BACK ONLINE NOW")) {
- if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('859900')
-            .setTitle('**🚀 HI, IM BACK [ONLINE] NOW & [UPDATED] 🚀** ')
-	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
-            .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-            .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
-            .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
-            .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
-            .addField('``TG - Servers :``', [ client.guilds.size ] , true)
-            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
-            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
-	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
-            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
-            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
-            .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
-                  .addField('``Bot Prefix :``' , `👑 [ - ] 👑` , true)
-                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
-	          .setTimestamp()
-    })
-}
-});
-
-client.on('ready', function(){
-client.channels.get("542905235241304065").send("-RINZLER IS BACK ONLINE NOW").then(m => m.delete(500));
-		   
- });
-
-// ==================================================================
-
-function timeCon(time) {
-    let days = Math.floor(time % 31536000 / 86400)
-    let hours = Math.floor(time % 31536000 % 86400 / 3600)
-    let minutes = Math.floor(time % 31536000 % 86400 % 3600 / 60)
-    let seconds = Math.round(time % 31536000 % 86400 % 3600 % 60)
-    days = days > 9 ? days : '0' + days
-    hours = hours > 9 ? hours : '0' + hours
-    minutes = minutes > 9 ? minutes : '0' + minutes
-    seconds = seconds > 9 ? seconds : '0' + seconds
-    return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
-}
-var version = '1.2';
-client.on('message', message => {
-    if(message.content.startsWith(prefix + "stats")) {  
-      if(!message.content.startsWith(prefix)) return;
-        if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
-  }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
- // }    
- if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
-    message.channel.send({
-        embed: new Discord.RichEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('859900')
-            .setTitle('**[RINZLER] STATS** ')
-	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
-            .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
-            .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ], true)
-            .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
-            .addField('``Bot RAM Usage :``', `[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]` , true)
-            .addField('``TG - Servers :``', [ client.guilds.size ] , true)
-            .addField('``TG - Channels :``' , `[ ${client.channels.size} ]` , true)
-            .addField('``TG - Users :``' ,`[ ${client.users.size} ]` , true)
-	    .addField('``TG Server Region :``' , `[ Eu - Central ]` , true)
-            .addField('``Bot Name :``' , `[ ${client.user.tag} ]` , true)
-            .addField('``Bot ID :``' , `[ ${client.user.id} ]` , true)
-            .addField('``Bot Node :``' , `[ ${process.version} ]` , true)
-                  .addField('``Bot Prefix :``' , `👑 [ - ] 👑` , true)
-                  .addField('``Bot Language :``' , `[ Java Script ]` , true)
-                  .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
-	          .setTimestamp()
-
-    })
-}
-	
-    setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
-	
-});
-
-// ==================================================================
-
-client.on('ready', function(){//npm i ms 
-client.user.setStatus("dnd")
-    var ms = 10000 ;
-    var setGame = [`★ -Help | MusicBot ★`,`★ SERVERS : [${client.guilds.size}] ★`,`★ THE GRID™ ★`];
-    var i = -1;
-    var j = 0;
-    setInterval(function (){
-        if( i == -1 ){
-            j = 1;
-        }
-        if( i == (setGame.length)-1 ){
-            j = -1;
-        }
-        i = i+j;
-        client.user.setGame(setGame[i],`https://www.twitch.tv/TheRealPredvkill`);
-    }, ms);
-
-});
-
-// ==================================================================
-
-client.on('message', async msg =>{
-	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
-    
-    let args = msg.content.split(' ');
-
-	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
-
-});
-
-
-// ==================================================================
-
-client.on('message', message => {
-  if(message.content ===  prefix + 'leaveserver') {
-	     message.channel.send('**:white_check_mark: ● Done - Now Im Gonna Go Back To My HQ , Cya ● **').then(m => m.delete(60000));
-       if (message.author.id !== "480540559233122324") return;
-  message.guild.leave();
-	  
-  }
-})
-
-// ==================================================================
-
-
-client.on('guildCreate', guild => {
-    var embed = new Discord.RichEmbed()
-    .setThumbnail(client.user.avatarURL)
-    .setColor('RANDOM')
-    .setDescription(`:heart: **شكراً لك لإضافه البوت الى سيرفرك** :heart:`)
-    .addField('**● Bot Version** :robot: :' , `**[ v1.2 ]**`)
-    .addField('**● Bot CMD** 🔮 :' , `**Use -help For Bot Commands**`)
-    .addField('**● Bot Owner** 👑 :' , `**[ <@480540559233122324> ]**`)
-    .addField('**● Bot Name** 🔰 :' , `**[ ${client.user.tag} ]**`)
-    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-    .setTimestamp()
-        guild.owner.send(embed)
-  });
-
-// ==================================================================
-		
-	client.on('message', async msg => {
-    if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
-    const args = msg.content.split(' ');
-    const searchString = args.slice(1).join(' ');
-    const url = args[1] ? args[1] .replace(/<(.+)>/g, '$1') : '';
-    const serverQueue = queue.get(msg.guild.id);
-    let command = msg.content.toLowerCase().split(" ")[0];
-    command = command.slice(prefix.length)
-		
-// ==================================================================
-		
-
 bot = new Discord.Client({
   messageCacheMaxSize: 10,
   messageCacheLifetime: 0,
@@ -214,7 +22,8 @@ bot = new Discord.Client({
 });
 console.log(process.pid);
 bot.on(`ready`, () => {
-	console.log(`${bot.user.username} I M READY TO FIGHT`)
+	console.log(`${bot.user.username} ready!`)
+	bot.user.setActivity(`Music | ${prefix}`, { type: "streaming", url: "https://www.twitch.tv/twitch" });
 });
 process.on('unhandledRejection', console.error);
 bot.login(process.env.token ? process.env.token : require("./config.json").token);
@@ -352,7 +161,22 @@ bot.on(`message`, (message) => {
   var args = message.content.substring(prefix.length).split(" ");
 
   switch (args[0].toLowerCase()) {
-      
+    case "help":
+      removedat(message);
+      let em = new Discord.RichEmbed()
+        .setColor("0x36393E")
+        .setAuthor(`${bot.user.username}`)
+		.setFooter(`Help`, bot.user.avatarURL)
+        .setDescription("Fine I'm a simple musicbot by RHG#0822 *that's only about 300 lines.*")
+        .addField(`${prefix}help`, `Sends this message.`)
+        .addField(`${prefix}play [link|search|playlist]`, `Plays a song in the current channel.`)
+        .addField(`${prefix}skip`, `Skips the current song.`)
+        .addField(`${prefix}stop`, `Stops and drops everything.`)
+        .addField(`${prefix}queue`, `Shows the first 5 songs in the queue.`)
+        .addField(`${prefix}np`, `Shows what is now playing.`);
+
+      message.channel.send({ embed: em });
+      break;
     case "play":
       if (!message.member.voiceChannel) {
         removedat(message);
@@ -518,171 +342,6 @@ bot.on(`message`, (message) => {
       break;
   }
   //message.delete();
-	
-// ==================================================================
-
-client.on('message', message => {
-  if (message.author.bot) return;
-   if (message.content === prefix + "help") {
-  if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
-  }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
- // }      
-   message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
-   const embed = new Discord.RichEmbed()
-  .setThumbnail(client.user.avatarURL)
-  .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
-  .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
-  .setAuthor(message.author.username,message.author.avatarURL)
-  .setColor('RANDOM')
-  .setDescription(`**
-:notes:  [❖═══ ● برفكس البوت ( - ) & أوامر الميوزك ● ════❖] :notes: 
-  
-❖═════════════════════════════════════❖  
-
-● :headphones: : ${prefix}play :arrow_right: لتشغيل اغنية ●
-
-● :headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
-
-● :headphones: : ${prefix}queue :arrow_right: اظهار قائمة التشغيل ●
-
-● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
-
-● :headphones: : ${prefix}nowplaying :arrow_right: اظهار الاغنية اللي انت مشغلها حاليا ●
-
-● :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة ●
-
-● :headphones: : ${prefix}stop :arrow_right: الخروج من رومك الصوتي ●
-
-● :headphones: : ${prefix}pause :arrow_right: ايقاف الاغنية مؤقتا ●
-
-
-❖═════════════════════════════════════❖
-
-:tools:   [❖═══ ● 🔰 [ RINZLER STATS ] 🔰 ● ═══❖] :tools:  
-
-● :rocket: : ${prefix}Rinzler :arrow_right: STATS BOT ●
-
-
-❖═════════════════════════════════════❖
-
-:heavy_plus_sign: [❖═════ ● Other Bot Commands ● ═══════❖] :heavy_plus_sign:   
-
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
-
-:hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
-   
-.setFooter('❖══ ● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ● ══❖')
-.setTimestamp()   
-   
-message.author.sendEmbed(embed)
-   
-    setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
-	   
-  }
-		  
 });
-
-// ==================================================================
-
-
-client.on('message', message => {
-    if(message.content === prefix + "restart") {
-	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
-          client.channels.get("542905235241304065").send({
-	     embed: new Discord.RichEmbed()
-	    .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('b58900')
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
-	    .setTimestamp()
-            .setTitle('**● :robot: [RINZLER] IS REBOOTING NOW BY THE OWNERS !**')
-	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
-		 });
-	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
-            console.log(`Rinzler Is Restarting Now..`);
-            setTimeout(() => {
-            client.destroy();
-            client.login(process.env.BOT_TOKEN);
-            },3000);
-
-}
-});
-
-// ==================================================================
-
-
- client.on('message', message => {
-    if(message.content === prefix + "shutdown") {
-	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
-            client.channels.get("542905235241304065").send({
-	    embed: new Discord.RichEmbed()
-	    .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setColor('dc322f')
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
-	    .setTimestamp()
-            .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY THE OWNERS !**')
-	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
-		    });
-            console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has ShutDown Successfully.`);
-            setTimeout(() => {
-            client.destroy();
-            },3000);
-}
-});    
-
-// ==================================================================
-
-
-client.on('message', message => {
-  if (message.content === ('-Rinzler')) {
-  if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
-  }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
- // }        
-  message.channel.send({
-      embed: new Discord.RichEmbed()
-          .setAuthor(client.user.username,client.user.avatarURL)
-          .setThumbnail(client.user.avatarURL)
-          .setColor('RANDOM')
-	  .addField('**Bot Version** :robot: :' , `[ v1.2 ]`, true)
-          .addField('**Bot Ping** 🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
-          .addField('**Servers** 📚 :', [client.guilds.size], true)
-          .addField('**Channels** 📝 :' , `[ ${client.channels.size} ]` , true)
-          .addField('**Users** 🔮 :' ,`[ ${client.users.size} ]` , true)
-          .addField('**Bot Name** 🔰 :' , `[ ${client.user.tag} ]` , true)
-          .addField('**Bot Owner** 👑 :' , `[ <@480540559233122324> ]` , true)
-	  .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-          .setTimestamp()   
-  
-  })
-}
-
-    setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
-	
-	
-});
-
-// ==================================================================
 
 client.login(process.env.BOT_TOKEN);
-
-// ==================================================================
-
- // THIS BOT [RINZLER] CREATED BY [THE RARE RANGER] - 2019© //
-////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
-
-// ==================================================================
