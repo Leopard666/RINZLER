@@ -556,8 +556,7 @@ client.on('message', message => {
     setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
-	
-}
+
 	
 });
 
