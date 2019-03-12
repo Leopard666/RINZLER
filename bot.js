@@ -82,15 +82,7 @@ function timeCon(time) {
 }
 var version = '1.2';
 client.on('message', message => {
-    if(message.content.startsWith(prefix + "stats")) {
-	   if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
-  }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
- // }    	    
+    if(message.content.startsWith(prefix + "stats")) {   	    
  if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
     message.channel.send({
         embed: new Discord.RichEmbed()
@@ -114,12 +106,6 @@ client.on('message', message => {
                   .addField('``Bot Language :``' , `[ Java Script ]` , true)
                   .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 	          .setTimestamp()
-	    
-			  setTimeout(() => {
-    cooldown.delete(message.author.id)
-  }, cdseconds * 1000)
-	   
-  }      
 
     })
 }
