@@ -406,7 +406,15 @@ function play(guild, song) {
 client.on('message', message => {
   if (message.author.bot) return;
    if (message.content === prefix + "help") {
-    
+   let prefix = prefixes[message.guild.id].prefixes;
+  if(!message.content.startsWith(prefix)) return;
+  if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("You have to wait 5 seconds between commands.")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }      
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
    const embed = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
@@ -456,21 +464,12 @@ client.on('message', message => {
    
 message.author.sendEmbed(embed)
    
-	   
-let prefix = prefixes[message.guild.id].prefixes;
-  if(!message.content.startsWith(prefix)) return;
-  if(cooldown.has(message.author.id)){
-    message.delete();
-    return message.reply("You have to wait 5 seconds between commands.")
-  }
-  //if(!message.member.hasPermission("ADMINISTRATOR")){
-    cooldown.add(message.author.id);
- // }   
 	  setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
 	   
   }
+		  
 });
 
 // ==================================================================
