@@ -14,7 +14,8 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyCncxr7q-96yc3uRT0Ib2L3aBlSHA9F0_A");
 const queue = new Map();
 const client = new Discord.Client();
-
+let cooldown = new Set();
+let cdseconds = 5;
 
 // ==================================================================
 
