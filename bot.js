@@ -16,6 +16,8 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 const client = new Discord.Client({disableEveryone: true});
 const prefix = "-";
+let cooldown = new Set();
+let cdseconds = 5;
 
 // ==================================================================
 
@@ -454,6 +456,20 @@ client.on('message', message => {
    
 message.author.sendEmbed(embed)
    
+	   
+let prefix = prefixes[message.guild.id].prefixes;
+  if(!message.content.startsWith(prefix)) return;
+  if(cooldown.has(message.author.id)){
+    message.delete();
+    return message.reply("You have to wait 5 seconds between commands.")
+  }
+  //if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+ // }   
+	  setTimeout(() => {
+    cooldown.delete(message.author.id)
+  }, cdseconds * 1000)
+	   
   }
 });
 
