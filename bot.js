@@ -378,9 +378,11 @@ client.on('message', function(message) {
 	    
 	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
 
-});
-
-        if (message.content.startsWith(prefix + 'volume')) {
+        });
+	    
+      }
+	
+        else if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
