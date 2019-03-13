@@ -377,10 +377,10 @@ client.on('message', function(message) {
 	    
 	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
 	     
-             });
-
-          });
-
+    }
+   
+		   }
+});
 
     else if (message.content.startsWith(prefix + 'volume')) {
 
