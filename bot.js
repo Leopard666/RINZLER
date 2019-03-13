@@ -281,7 +281,7 @@ client.on('message', function(message) {
 
                         .setAuthor(client.user.username, client.user.avatarURL)
 
-                        .addField(':play_pause: تمت إضافةالاغنيه بقائمة الإنتظار', `:musical_note: **${videoInfo.title}** :musical_note:`)
+                        .addField(':play_pause: **تمت إضافةالاغنيه بقائمة الإنتظار :**', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
                         .setColor("RANDOM")
 		    
@@ -350,8 +350,18 @@ client.on('message', function(message) {
 	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 	
-        embed: new Discord.RichEmbed()
+	var server = server = servers[message.guild.id];
 
+        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	    
+	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
+	    
+        skip_song(message);
+	    
+   	message.channel.send({  
+
+        embed: new Discord.RichEmbed()
+	   
 	.setAuthor(client.user.username, client.user.avatarURL)
 		
         .addField('**:track_next: تم تجآوز هذآ المقطع :**')
@@ -364,16 +374,10 @@ client.on('message', function(message) {
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
-            skip_song(message);
-
-            var server = server = servers[message.guild.id];
-
-            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	    
-	    message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`)
-  
         }
-	
+			     
+        });
+
         else if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
@@ -392,7 +396,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'pause')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         message.channel.send('`✔`').then(() => {
 
@@ -404,7 +408,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'resume')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
             message.channel.send('`✔`').then(() => {
 
@@ -416,7 +420,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'stop')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         message.channel.send('`✔`');
 
@@ -428,7 +432,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'join')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
 
@@ -436,7 +440,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
 
@@ -464,7 +468,7 @@ client.on('message', function(message) {
 
 function skip_song(message) {
 
-    if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+    if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
     dispatcher.end();
 
