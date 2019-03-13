@@ -12,7 +12,7 @@ const request = require('request');
 const fs = require('fs');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
-const yt_api_key = ("AIzaSyCncxr7q-96yc3uRT0Ib2L3aBlSHA9F0_A");
+const yt_api_key = "AIzaSyCncxr7q-96yc3uRT0Ib2L3aBlSHA9F0_A";
 let cooldown = new Set();
 let cdseconds = 5;
 
