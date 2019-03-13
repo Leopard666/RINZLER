@@ -379,7 +379,6 @@ client.on('message', function(message) {
 	     
     }
    
-		   }
 });
 
     else if (message.content.startsWith(prefix + 'volume')) {
