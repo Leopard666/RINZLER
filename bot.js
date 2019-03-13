@@ -246,7 +246,7 @@ client.on('message', function(message) {
 
     if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         // if user is not insert the URL or song title
 
@@ -256,7 +256,7 @@ client.on('message', function(message) {
 
                 .setAuthor(client.user.username, client.user.avatarURL)
 
-                .setFooter('طلب بواسطة: ' + message.author.tag)
+                .setFooter('طلب بواسطة : ' + message.author.tag)
 
                 .setDescription('**قم بإدراج رابط او اسم الأغنيه**')
 
@@ -280,15 +280,17 @@ client.on('message', function(message) {
 
                         .setAuthor(client.user.username, client.user.avatarURL)
 
-                        .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**
-                          ${videoInfo.title}
-                          **`)
+                        .addField(':play_pause: تمت إضافةالاغنيه بقائمة الإنتظار', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
-                        .setColor("#a637f9")
+                        .setColor("RANDOM")
 
-                        .setFooter('|| ' + message.author.tag)
-
+                        .setFooter('طلب بواسطة : ' + message.author.tag)
+		    
                         .setThumbnail(videoInfo.thumbnailUrl)
+		    
+		        .setTimestamp()
+		    
+                        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
                     message.channel.sendEmbed(play_info);
 
@@ -320,23 +322,22 @@ client.on('message', function(message) {
 
                         .setAuthor(client.user.username, client.user.avatarURL)
 
-                        .addField('__**تم التشغيل ✅**__', `**${videoInfo.title}
-                              **`)
+                        .addField('**:arrow_forward: تم التشغيل :**' , `:notes: **${videoInfo.title}** :notes:`)
 
                         .setColor("RANDOM")
 
-                        .addField(`بواسطه`, message.author.username)
+                        .addField(`بواسطه :arrow_right:` , message.author.username)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
+		    
+                        .setTimestamp()
+		    
+                        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
-                    // .setDescription('?')
+                        message.channel.sendEmbed(play_info)
 
-                    message.channel.sendEmbed(play_info)
+                        message.channel.send(`:notes: **${videoInfo.title}** **: تم تشغيل** :notes:`)
 
-                    message.channel.send(`
-                            **${videoInfo.title}** تم تشغيل `)
-
-                    // client.user.setGame(videoInfo.title,'https://www.twitch.tv/Abdulmohsen');
 
                 });
 
@@ -347,34 +348,58 @@ client.on('message', function(message) {
     }
 
     else if (mess.startsWith(prefix + 'skip')) {
+	    
+    fetchVideoInfo(id, function(err, videoInfo) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+	
+        embed: new Discord.RichEmbed()
 
-        message.channel.send('`✔`').then(() => {
+	.setAuthor(client.user.username, client.user.avatarURL)
+		
+        .addField('**:track_next: تم تجآوز هذآ المقطع :**' , `:notes: **${videoInfo.title}** :notes:`)
+
+        .setColor("RANDOM")
+
+        .addField(`بواسطه :arrow_right:` , message.author.username)
+
+        .setThumbnail(videoInfo.thumbnailUrl)
+		
+	.setTimestamp()
+		    
+        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
             skip_song(message);
 
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	    
+	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
+	     
+	    
+	        }
+   
+		    }
 
-        });
+             });
 
-    }
+          });
 
-    else if (message.content.startsWith(prefix + 'vol')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+    else if (message.content.startsWith(prefix + 'volume')) {
 
-        // console.log(args)
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
-        if (args > 100) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+        console.log(args)
 
-        if (args < 1) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+        if (args > 100) return message.channel.send(':sound: **(1 - 100) | لا أكثر ولا أقل** :sound:')
+
+        if (args < 1) return message.channel.send(':sound: **(1 - 100) | لا أكثر ولا أقل** :sound:')
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`**__ ${dispatcher.volume*50}% مستوى الصوت __**`);
+        message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`);
 
     }
 
@@ -390,7 +415,7 @@ client.on('message', function(message) {
 
     }
 
-    else if (mess.startsWith(prefix + 'ok')) {
+    else if (mess.startsWith(prefix + 'resume')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
@@ -414,7 +439,7 @@ client.on('message', function(message) {
 
     }
 
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'join')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
