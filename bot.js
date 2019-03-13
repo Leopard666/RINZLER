@@ -376,9 +376,7 @@ client.on('message', function(message) {
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	    
 	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
-	     
-    }
-   
+
 });
 
     else if (message.content.startsWith(prefix + 'volume')) {
