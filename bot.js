@@ -373,10 +373,12 @@ client.on('message', function(message) {
 	.setTimestamp()
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-
-        }
-			     
+		
+		
         });
+	    
+      }
+	
 
         else if (message.content.startsWith(prefix + 'volume')) {
 
