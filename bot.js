@@ -284,8 +284,6 @@ client.on('message', function(message) {
                         .addField(':play_pause: تمت إضافةالاغنيه بقائمة الإنتظار', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
                         .setColor("RANDOM")
-
-                        .setFooter('طلب بواسطة : ' + message.author.tag)
 		    
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    
@@ -350,22 +348,18 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'skip')) {
 	    
-    fetchVideoInfo(id, function(err, videoInfo) {
-
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 	
         embed: new Discord.RichEmbed()
 
 	.setAuthor(client.user.username, client.user.avatarURL)
 		
-        .addField('**:track_next: تم تجآوز هذآ المقطع :**' , `:notes: **${videoInfo.title}** :notes:`)
+        .addField('**:track_next: تم تجآوز هذآ المقطع :**')
 
         .setColor("RANDOM")
 
         .addField(`بواسطه :arrow_right:` , message.author.username)
-
-        .setThumbnail(videoInfo.thumbnailUrl)
-		
+	
 	.setTimestamp()
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
@@ -376,11 +370,10 @@ client.on('message', function(message) {
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	    
-	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
+	    message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`)
 
         });
 	    
-      }
 	
         else if (message.content.startsWith(prefix + 'volume')) {
 
