@@ -213,7 +213,8 @@ client.on('guildCreate', guild => {
     .addField('**● Bot Name** 🔰 :' , `**[ ${client.user.tag} ]**`)
     .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
     .setTimestamp()
-        guild.owner.send(embed)
+    guild.owner.send(embed)
+	
   });
 		
 // ==================================================================
@@ -379,7 +380,7 @@ client.on('message', function(message) {
 
 });
 
-    else if (message.content.startsWith(prefix + 'volume')) {
+        if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
