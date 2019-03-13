@@ -371,9 +371,8 @@ client.on('message', function(message) {
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	    
 	    message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`)
-
-        });
-	    
+  
+        }
 	
         else if (message.content.startsWith(prefix + 'volume')) {
 
@@ -389,7 +388,7 @@ client.on('message', function(message) {
 
         message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`);
 
-    }
+   
 
     else if (mess.startsWith(prefix + 'pause')) {
 
