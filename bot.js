@@ -375,10 +375,11 @@ client.on('message', function(message) {
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		
 		
-        });
-	    
-      }
-	
+      }    
+			     
+   }
+			     
+ });
 
         else if (message.content.startsWith(prefix + 'volume')) {
 
