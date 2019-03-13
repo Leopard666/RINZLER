@@ -351,11 +351,11 @@ client.on('message', function(message) {
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 	
 	var server = server = servers[message.guild.id];
-
+	    
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	    
+
 	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
-	    
+    
         skip_song(message);
 	    
    	message.channel.send({  
@@ -373,9 +373,11 @@ client.on('message', function(message) {
 	.setTimestamp()
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-	     
+		
+     
        });
 	   
+	 }
 	
         else if (message.content.startsWith(prefix + 'volume')) {
 
@@ -393,13 +395,13 @@ client.on('message', function(message) {
 
    
 
-    else if (mess.startsWith(prefix + 'pause')) {
+        else if (mess.startsWith(prefix + 'pause')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         message.channel.send('`✔`').then(() => {
 
-            dispatcher.pause();
+        dispatcher.pause();
 
         });
 
