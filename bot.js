@@ -377,11 +377,6 @@ client.on('message', function(message) {
 	    
 	    message.channel.send(`:notes: **${videoInfo.title}** **: تم تجآوز هذآ المقطع** :notes:`)
 	     
-	    
-	        }
-   
-		    }
-
              });
 
           });
