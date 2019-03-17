@@ -355,9 +355,7 @@ client.on('message', function(message) {
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 
 	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
-    
-        skip_song(message);
-	    
+   
    	message.channel.send({  
 
         embed: new Discord.RichEmbed()
@@ -374,6 +372,7 @@ client.on('message', function(message) {
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		
+         skip_song(message);	
      
        });
 	   
