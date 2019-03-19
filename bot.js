@@ -436,7 +436,7 @@ client.on('message', function(message) {
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
  
 
-    else if (mess.startsWith(prefix + 'play')) {
+     if (mess.startsWith(prefix + 'play')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
