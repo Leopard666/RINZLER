@@ -478,8 +478,6 @@ function playMusic(id, message) {
 
             filter: 'audioonly'
 
-        });
-
         skipReq = 0;
 
         skippers = [];
