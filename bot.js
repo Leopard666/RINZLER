@@ -427,8 +427,6 @@ client.on('message', function(message) {
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 
-            });
-
     }
 
     else if (mess.startsWith(prefix + 'join')) {
