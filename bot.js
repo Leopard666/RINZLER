@@ -462,8 +462,6 @@ client.on('message', function(message) {
 
     }
 
-});
-
 function skip_song(message) {
 
     if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
