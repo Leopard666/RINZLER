@@ -349,7 +349,9 @@ client.on('message', function(message) {
     else if (mess.startsWith(prefix + 'skip')) {
 	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
-	
+	    
+	skip_song(message);	
+
 	var server = server = servers[message.guild.id];
 	    
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
@@ -371,8 +373,6 @@ client.on('message', function(message) {
 	.setTimestamp()
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-		
-         skip_song(message);	
      
        });
 	   
