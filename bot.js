@@ -390,11 +390,10 @@ client.on('message', function(message) {
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`);
+        message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`); 
+	 
 
-   
-
-        else if (mess.startsWith(prefix + 'pause')) {
+        if (message.content.startsWith(prefix + 'pause')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
@@ -404,7 +403,7 @@ client.on('message', function(message) {
 
         });
 
-    }
+      }
 
     else if (mess.startsWith(prefix + 'resume')) {
 
