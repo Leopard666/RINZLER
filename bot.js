@@ -427,6 +427,8 @@ client.on('message', function(message) {
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 
+            });
+
     }
 
     else if (mess.startsWith(prefix + 'join')) {
@@ -434,8 +436,7 @@ client.on('message', function(message) {
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
-
-    }
+ 
 
     else if (mess.startsWith(prefix + 'play')) {
 
@@ -470,9 +471,7 @@ function skip_song(message) {
     if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
     dispatcher.end();
-
-}
-
+		
 function playMusic(id, message) {
 
     voiceChannel = message.member.voiceChannel;
