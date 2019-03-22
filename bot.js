@@ -476,6 +476,9 @@ function skip_song(message) {
     if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
     dispatcher.end();
+	
+ }
+	
 		
 function playMusic(id, message) {
 
@@ -486,6 +489,9 @@ function playMusic(id, message) {
         let stream = ytdl('https://www.youtube.com/watch?v=' + id, {
 
             filter: 'audioonly'
+		
+       });
+
 
         skipReq = 0;
 
