@@ -350,15 +350,15 @@ client.on('message', function(message) {
 	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 	    
-	skip_song(message);	
-
 	var server = server = servers[message.guild.id];
 	    
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 
+	skip_song(message);	
+   
 	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
    
-   	message.channel.send({  
+        message.channel.send('`✔`').then(() => {
 
         embed: new Discord.RichEmbed()
 	   
@@ -374,9 +374,9 @@ client.on('message', function(message) {
 		    
         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
      
-       });
-	   
-	 }
+        });
+
+    }
 	
         else if (message.content.startsWith(prefix + 'volume')) {
 
@@ -391,7 +391,10 @@ client.on('message', function(message) {
         dispatcher.setVolume(1 * args / 50);
 
         message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`); 
-	 
+		
+	
+      }
+
 
         if (message.content.startsWith(prefix + 'pause')) {
 
@@ -404,6 +407,7 @@ client.on('message', function(message) {
         });
 
       }
+	
 
     else if (mess.startsWith(prefix + 'resume')) {
 
@@ -435,8 +439,10 @@ client.on('message', function(message) {
 
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
  
+    }
+	
 
-     if (mess.startsWith(prefix + 'play')) {
+     else if (mess.startsWith(prefix + 'play')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
@@ -461,6 +467,8 @@ client.on('message', function(message) {
         message.channel.sendEmbed(playing_now_info);
 
     }
+	
+});	
 
 function skip_song(message) {
 
