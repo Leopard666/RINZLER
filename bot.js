@@ -3,6 +3,7 @@
  // THIS BOT [RINZLER] CREATED BY [THE RARE RANGER] - 2019© //
 ////////////// 🔰 THE DAMNATION™ & THE GRID™ 🔰 //////////////
 
+
 // ==================================================================
 
 const Discord = require('discord.js');
