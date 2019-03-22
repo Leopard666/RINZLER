@@ -443,19 +443,17 @@ client.on('message', function(message) {
     }
 	
 
-     else if (mess.startsWith(prefix + 'play')) {
+        else if (mess.startsWith(prefix + 'play')) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
-        if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
+        if (isPlaying == false) return message.channel.send(':anger: | **تم التوقيف**');
 
         let playing_now_info = new Discord.RichEmbed()
 
             .setAuthor(client.user.username, client.user.avatarURL)
 
-            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**
-                  ${videoInfo.title}
-                  **`)
+            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
 
             .setColor("RANDOM")
 
