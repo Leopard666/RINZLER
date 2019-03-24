@@ -350,31 +350,18 @@ client.on('message', function(message) {
     else if (mess.startsWith(prefix + 'skip')) {
 	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
-	    
-	var server = server = servers[message.guild.id];
-	    
-        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-
-	skip_song(message);	
-   
+	        
 	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
    
         message.channel.send('`✔`').then(() => {
-
-        embed: new Discord.RichEmbed()
-	   
-	.setAuthor(client.user.username, client.user.avatarURL)
 		
-        .addField('**:track_next: تم تجآوز هذآ المقطع :**')
-
-        .setColor("RANDOM")
-
-        .addField(`بواسطه :arrow_right:` , message.author.username)
+	skip_song(message);	
 	
-	.setTimestamp()
-		    
-        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
-     
+	var server = server = servers[message.guild.id];
+		
+        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+		
+
         });
 
     }
@@ -460,8 +447,6 @@ client.on('message', function(message) {
             .setFooter('طلب بواسطة: ' + message.author.tag)
 
             .setThumbnail(videoInfo.thumbnailUrl)
-
-            now_playing.push(videoInfo.title);
 
         message.channel.sendEmbed(playing_now_info);
 
