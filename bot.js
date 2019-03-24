@@ -383,7 +383,7 @@ client.on('message', function(message) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
-        console.log(args)
+        //console.log(args)
 
         if (args > 100) return message.channel.send(':sound: **(1 - 100) | لا أكثر ولا أقل** :sound:')
 
@@ -461,7 +461,7 @@ client.on('message', function(message) {
 
             .setThumbnail(videoInfo.thumbnailUrl)
 
-        //.setDescription('?')
+            now_playing.push(videoInfo.title);
 
         message.channel.sendEmbed(playing_now_info);
 
