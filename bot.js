@@ -347,59 +347,53 @@ client.on('message', function(message) {
 
     }
 
-    else if (mess.startsWith(prefix + 'skip')) {
-	    
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
-	        
-	message.channel.send(`:notes: **تم تجآوز هذآ المقطع** :notes:`) 
-   
+else if (mess.startsWith(prefix + 'skip')) {
+
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+
         message.channel.send('`✔`').then(() => {
-		
-	skip_song(message);	
-	
-	var server = server = servers[message.guild.id];
-		
-        if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-		
+
+            skip_song(message);
+
+            var server = server = servers[message.guild.id];
+
+            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 
         });
 
     }
-	
-        else if (message.content.startsWith(prefix + 'volume')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+    else if (message.content.startsWith(prefix + 'vol')) {
 
-        //console.log(args)
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
-        if (args > 100) return message.channel.send(':sound: **(1 - 100) | لا أكثر ولا أقل** :sound:')
+        // console.log(args)
 
-        if (args < 1) return message.channel.send(':sound: **(1 - 100) | لا أكثر ولا أقل** :sound:')
+        if (args > 100) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+
+        if (args < 1) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`:loud_sound: **${dispatcher.volume*50}% : مستوى الصوت** :loud_sound:`); 
-		
-	
-      }
+        message.channel.sendMessage(`**__ ${dispatcher.volume*50}% مستوى الصوت __**`);
 
+    }
 
-        if (message.content.startsWith(prefix + 'pause')) {
+    else if (mess.startsWith(prefix + 'pause')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
         message.channel.send('`✔`').then(() => {
 
-        dispatcher.pause();
+            dispatcher.pause();
 
         });
 
-      }
-	
+    }
 
-    else if (mess.startsWith(prefix + 'resume')) {
+    else if (mess.startsWith(prefix + 'ok')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
             message.channel.send('`✔`').then(() => {
 
@@ -411,7 +405,7 @@ client.on('message', function(message) {
 
     else if (mess.startsWith(prefix + 'stop')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
         message.channel.send('`✔`');
 
@@ -421,26 +415,27 @@ client.on('message', function(message) {
 
     }
 
-    else if (mess.startsWith(prefix + 'join')) {
+    else if (mess.startsWith(prefix + 'تعال')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
- 
+
     }
-	
 
-        else if (mess.startsWith(prefix + 'play')) {
+    else if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
-        if (isPlaying == false) return message.channel.send(':anger: | **تم التوقيف**');
+        if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
 
         let playing_now_info = new Discord.RichEmbed()
 
             .setAuthor(client.user.username, client.user.avatarURL)
 
-            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
+            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**
+                  ${videoInfo.title}
+                  **`)
 
             .setColor("RANDOM")
 
@@ -448,21 +443,22 @@ client.on('message', function(message) {
 
             .setThumbnail(videoInfo.thumbnailUrl)
 
+        //.setDescription('?')
+
         message.channel.sendEmbed(playing_now_info);
 
     }
-	
-});	
+
+});
 
 function skip_song(message) {
 
-    if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+    if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
 
     dispatcher.end();
-	
- }
-	
-		
+
+}
+
 function playMusic(id, message) {
 
     voiceChannel = message.member.voiceChannel;
@@ -472,9 +468,8 @@ function playMusic(id, message) {
         let stream = ytdl('https://www.youtube.com/watch?v=' + id, {
 
             filter: 'audioonly'
-		
-       });
 
+        });
 
         skipReq = 0;
 
@@ -571,7 +566,8 @@ function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 
 }
-
+	
+   
 // ==================================================================
 
 client.on('message', message => {
