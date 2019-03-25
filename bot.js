@@ -265,7 +265,7 @@ client.on('message', function(message) {
 		
 	        .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 		 
-                message.channel.sendEmbed(play_info)
+                 message.channel.sendEmbed(play_info)
 
             return;
 
@@ -325,7 +325,7 @@ client.on('message', function(message) {
 
                         .setAuthor(client.user.username, client.user.avatarURL)
 
-                        .addField('**:arrow_forward: تم التشغيل :**' , `:notes: **${videoInfo.title}** :notes:`)
+                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: **${videoInfo.title}** :notes:`)
 
                         .setColor("RANDOM")
 
@@ -381,11 +381,11 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        // console.log(args)
+        console.log(args)
 
-        if (args > 100) return message.channel.send(':sound: **[1 - 100] | لا أكثر ولا أقل** :sound:')
+        if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
-        if (args < 1) return message.channel.send(':sound: **[1 - 100] | لا أكثر ولا أقل** :sound:')
+        if (args < 1) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
         dispatcher.setVolume(1 * args / 50);
 
@@ -521,7 +521,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
             .setColor("RANDOM")
 
-            .setFooter('طلب بواسطة: ' + message.author.tag)
+            .setFooter('طلب بواسطة : ' + message.author.tag)
 
             .setThumbnail(videoInfo.thumbnailUrl)
 
