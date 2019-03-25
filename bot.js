@@ -191,9 +191,13 @@ client.on('message', async msg =>{
 // ==================================================================
 
 client.on('message', message => {
+	
   if(message.content ===  prefix + 'leaveserver') {
+	  
 	     message.channel.send('**:white_check_mark: ● Done - Now Im Gonna Go Back To My HQ , Cya ● **').then(m => m.delete(60000));
+	  
        if (message.author.id !== "480540559233122324") return;
+	  
   message.guild.leave();
 	  
   }
@@ -203,16 +207,27 @@ client.on('message', message => {
 
 
 client.on('guildCreate', guild => {
+	
     var embed = new Discord.RichEmbed()
+    
     .setThumbnail(client.user.avatarURL)
+    
     .setColor('RANDOM')
+    
     .setDescription(`:heart: **شكراً لك لإضافه البوت الى سيرفرك** :heart:`)
+    
     .addField('**● Bot Version** :robot: :' , `**[ v1.2 ]**`)
+    
     .addField('**● Bot CMD** 🔮 :' , `**Use -help For Bot Commands**`)
+    
     .addField('**● Bot Owner** 👑 :' , `**[ <@480540559233122324> ]**`)
+    
     .addField('**● Bot Name** 🔰 :' , `**[ ${client.user.tag} ]**`)
+    
     .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
+    
     .setTimestamp()
+    
     guild.owner.send(embed)
 	
   });
@@ -236,6 +251,8 @@ var download = function(uri, filename, callback) {
     });
 
 };
+
+// ==================================================================
 
 client.on('message', function(message) {
 
@@ -306,6 +323,8 @@ client.on('message', function(message) {
             });
 
         }
+	    
+// ==================================================================
 
         else {
 
@@ -345,6 +364,8 @@ client.on('message', function(message) {
         }
 
     }
+	
+// ==================================================================
 
 else if (mess.startsWith(prefix + 'skip')) {
 
@@ -375,8 +396,10 @@ else if (mess.startsWith(prefix + 'skip')) {
 	    .setTimestamp()				     
 })
 	
-}	
-		
+}
+	
+// ==================================================================
+			
     else if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
@@ -392,6 +415,8 @@ else if (mess.startsWith(prefix + 'skip')) {
         message.channel.sendMessage(`:loud_sound: | **[${dispatcher.volume*50}%] : مستوى الصوت** | :loud_sound:`);
 
     }
+	
+// ==================================================================
 
     else if (mess.startsWith(prefix + 'pause')) {
 
@@ -420,6 +445,8 @@ else if (mess.startsWith(prefix + 'skip')) {
   })
 	
 }
+	
+// ==================================================================
 
     else if (mess.startsWith(prefix + 'resume')) {
 
@@ -448,6 +475,8 @@ else if (mess.startsWith(prefix + 'skip')) {
   })
 	
 }
+	
+// ==================================================================
 
     else if (mess.startsWith(prefix + 'stop')) {
 
@@ -478,6 +507,8 @@ else if (mess.startsWith(prefix + 'skip')) {
   })
 	
 }
+	
+// ==================================================================
 
     else if (mess.startsWith(prefix + 'join')) {
 
@@ -506,6 +537,8 @@ else if (mess.startsWith(prefix + 'skip')) {
   })
 	
 }
+	
+// ==================================================================
 
     else if (mess.startsWith(prefix + 'play')) {
 
@@ -530,6 +563,8 @@ else if (mess.startsWith(prefix + 'skip')) {
     }
 
 });
+
+// ==================================================================
 
 function skip_song(message) {
 
@@ -593,6 +628,8 @@ function playMusic(id, message) {
 
 }
 
+// ==================================================================
+
 function getID(str, cb) {
 
     if (isYoutube(str)) {
@@ -613,6 +650,8 @@ function getID(str, cb) {
 
 }
 
+// ==================================================================
+
 function add_to_queue(strID) {
 
     if (isYoutube(strID)) {
@@ -628,6 +667,8 @@ function add_to_queue(strID) {
     }
 
 }
+
+// ==================================================================
 
 function search_video(query, cb) {
 
@@ -650,25 +691,41 @@ function isYoutube(str) {
    
 // ==================================================================
 
+
 client.on('message', message => {
+	
   if (message.author.bot) return;
+	
    if (message.content === prefix + "help") {
+	   
   if(!message.content.startsWith(prefix)) return;
+	   
   if(cooldown.has(message.author.id)){
-    message.delete();
+	  
+  message.delete();
+	  
     return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
   }
   //if(!message.member.hasPermission("ADMINISTRATOR")){
+	   
     cooldown.add(message.author.id);
  // }      
    message.channel.send('**:white_check_mark: ● Done , تــــم ارســالك في الخــاص ● :e_mail:**').then(m => m.delete(60000));
+	   
    const embed = new Discord.RichEmbed()
+   
   .setThumbnail(client.user.avatarURL)
+   
   .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
+   
   .addField('**● BOT - OWNER** 👑 :' , `**[ <@480540559233122324> ]**`)
+   
   .setAuthor(message.author.username,message.author.avatarURL)
+   
   .setColor('RANDOM')
+   
   .setDescription(`**
+
 :notes:  [❖═══ ● برفكس البوت ( - ) & أوامر الميوزك ● ════❖] :notes: 
   
 ❖═════════════════════════════════════❖  
@@ -677,18 +734,13 @@ client.on('message', message => {
 
 ● :headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
 
-● :headphones: : ${prefix}queue :arrow_right: اظهار قائمة التشغيل ●
-
 ● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
-
-● :headphones: : ${prefix}nowplaying :arrow_right: اظهار الاغنية اللي انت مشغلها حاليا ●
 
 ● :headphones: : ${prefix}resume :arrow_right: لاعادت تشغيل الاغنية الموجودة ●
 
 ● :headphones: : ${prefix}stop :arrow_right: الخروج من رومك الصوتي ●
 
 ● :headphones: : ${prefix}pause :arrow_right: ايقاف الاغنية مؤقتا ●
-
 
 ❖═════════════════════════════════════❖
 
@@ -722,18 +774,30 @@ message.author.sendEmbed(embed)
 
 
 client.on('message', message => {
+	
     if(message.content === prefix + "restart") {
+	    
 	     if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
           client.channels.get("542905235241304065").send({
+		  
 	     embed: new Discord.RichEmbed()
+		  
 	    .setAuthor(client.user.username,client.user.avatarURL)
+		  
             .setThumbnail(client.user.avatarURL)
+		  
             .setColor('b58900')
+		  
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		  
 	    .setTimestamp()
+		  
             .setTitle('**● :robot: [RINZLER] IS REBOOTING NOW BY THE OWNERS !**')
+		  
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		  
 		 });
+	    
 	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
             console.log(`Rinzler Is Restarting Now..`);
             setTimeout(() => {
@@ -748,42 +812,65 @@ client.on('message', message => {
 
 
  client.on('message', message => {
+	 
     if(message.content === prefix + "shutdown") {
-	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
+	    
+	    if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));
+	    
             client.channels.get("542905235241304065").send({
+		    
 	    embed: new Discord.RichEmbed()
+		    
 	    .setAuthor(client.user.username,client.user.avatarURL)
+		    
             .setThumbnail(client.user.avatarURL)
+		    
             .setColor('dc322f')
+		    
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		    
 	    .setTimestamp()
+		    
             .setTitle('**● :robot: [RINZLER] IS SHUTDOWN NOW BY THE OWNERS !**')
+		    
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
+		    
 		    });
+	    
             console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has ShutDown Successfully.`);
             setTimeout(() => {
             client.destroy();
             },3000);
 }
+	 
 });    
 
 // ==================================================================
 
-
 client.on('message', message => {
+	
   if (message.content === ('-Rinzler')) {
+	  
   if(!message.content.startsWith(prefix)) return;
+	  
   if(cooldown.has(message.author.id)){
+	  
     message.delete();
+	  
     return message.reply("**:no_entry: You have to wait [5] seconds between commands :no_entry:**")
   }
   //if(!message.member.hasPermission("ADMINISTRATOR")){
+	  
     cooldown.add(message.author.id);
  // }        
   message.channel.send({
+	  
       embed: new Discord.RichEmbed()
+	  
           .setAuthor(client.user.username,client.user.avatarURL)
+	  
           .setThumbnail(client.user.avatarURL)
+	  
           .setColor('RANDOM')
 	  .addField('**Bot Version** :robot: :' , `[ v1.2 ]`, true)
           .addField('**Bot Ping** 🚀 :' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
@@ -815,10 +902,11 @@ client.on('ready',async () => {
 
 // ==================================================================
 
-
 client.on('message', message =>{
 
-    if(message.content === 'Naping'){
+    if(message.content === '-BOTMS'){
+	    
+ if(!message.channel.guild) return message.reply('**:x: This Command Only For Servers :x:**').then(m => m.delete(60000));    
 
 let start = Date.now(); message.channel.send('pong').then(message => { 
 
@@ -831,7 +919,6 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
     }
 
 });
-
 
 // ==================================================================
 
