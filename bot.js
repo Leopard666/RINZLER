@@ -307,9 +307,7 @@ client.on('message', function(message) {
                         .setColor("RANDOM")
 		    
                         .setThumbnail(videoInfo.thumbnailUrl)
-		    
-		        .setTimestamp()
-		    
+		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
                         message.channel.sendEmbed(play_info);
@@ -367,7 +365,7 @@ client.on('message', function(message) {
 	
 // ==================================================================
 
-else if (mess.startsWith(prefix + 'skip')) {
+else if (mess.startsWith(prefix + 'next')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
@@ -403,8 +401,6 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-
-        console.log(args)
 
         if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
@@ -732,7 +728,7 @@ client.on('message', message => {
 
 ● :headphones: : ${prefix}play :arrow_right: لتشغيل اغنية ●
 
-● :headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
+● :headphones: : ${prefix}next :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
 
 ● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
 
