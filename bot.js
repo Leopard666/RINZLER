@@ -352,7 +352,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	
-		  });	
+		  }	
 
 	 return message.channel.send({
 	
