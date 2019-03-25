@@ -351,7 +351,9 @@ else if (mess.startsWith(prefix + 'skip')) {
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-		  
+	
+		  });	
+
 	 return message.channel.send({
 	
 	    embed: new Discord.RichEmbed()
@@ -370,7 +372,6 @@ else if (mess.startsWith(prefix + 'skip')) {
 		 				     
 })
 	
-});	
 		
     else if (message.content.startsWith(prefix + 'volume')) {
 
