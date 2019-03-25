@@ -345,17 +345,13 @@ client.on('message', function(message) {
 else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-		
+	
             skip_song(message);
 
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	
-		  }	
-
-	 return message.channel.send({
-	
+	  
 	    embed: new Discord.RichEmbed()
 		
 	    .setAuthor(client.user.username,client.user.avatarURL)
@@ -368,8 +364,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		
 	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 		 
-	    .setTimestamp()
-		 				     
+	    .setTimestamp()				     
 })
 	
 		
