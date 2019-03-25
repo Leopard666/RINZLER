@@ -330,8 +330,6 @@ client.on('message', function(message) {
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
                         message.channel.sendEmbed(play_info)
-
-                        message.channel.send(`:notes: **${videoInfo.title}** **: تم تشغيل** :notes:`)
 			
 
                 });
@@ -391,13 +389,27 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        message.channel.send('`✔`').then(() => {
-
             dispatcher.pause();
-
-        });
-
-    }
+	    
+	    message.channel.send({
+	  
+	    embed: new Discord.RichEmbed()
+		
+	    .setAuthor(client.user.username,client.user.avatarURL)
+				
+	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
+		      
+	    .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+            .setColor('RANDOM')
+		
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		 
+	    .setTimestamp()
+		    
+  })
+	
+}
 
     else if (mess.startsWith(prefix + 'resume')) {
 
