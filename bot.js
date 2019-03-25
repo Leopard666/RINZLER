@@ -256,8 +256,6 @@ client.on('message', function(message) {
                 .setAuthor(client.user.username, client.user.avatarURL)
 	    
 	        .setThumbnail(client.user.avatarURL)
-
-                .setFooter('طلب بواسطة : ' + message.author.tag)
 		
 	        .addField(':notes: | **قم بإدراج رابط او اسم الأغنيه | :notes:**')
 		            
@@ -267,8 +265,6 @@ client.on('message', function(message) {
 		
 	        .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 		 
-	        .setTimestamp()
-
             message.channel.sendEmbed(play_info)
 
             return;
