@@ -353,7 +353,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
-		
+		    
+	    .setThumbnail(client.user.avatarURL)
+
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':track_next: | **تم تجآوز هذآ المقطع**')
