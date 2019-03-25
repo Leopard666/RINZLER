@@ -259,15 +259,13 @@ client.on('message', function(message) {
 
                 .setFooter('طلب بواسطة : ' + message.author.tag)
 		
-	        .addField(':notes: | **قم بإدراج رابط او اسم الأغنيه**')
-		      
-	        .addField(`بواسطه :arrow_right:` , message.author.username)
-      
+	        .addField(':notes: | **قم بإدراج رابط او اسم الأغنيه | :notes:**')
+		            
                 .setColor('RANDOM')
 	    
 	        .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
 		
-	        .setFooter('● :flag_tn: [ THE GRID™ - OFFICIAL - 2019© ] :flag_tn: ●')
+	        .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 		 
 	        .setTimestamp()
 
