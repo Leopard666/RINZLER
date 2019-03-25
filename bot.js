@@ -358,7 +358,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		
             .setThumbnail(client.user.avatarURL)
 		
-	    .addField(':track_next: | **تم تجآوز هذآ المقطع**`)
+	    .addField(':track_next: | **تم تجآوز هذآ المقطع**')
 		      
 	    .addField(`بواسطه :arrow_right:` , message.author.username)
       
