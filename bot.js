@@ -265,7 +265,7 @@ client.on('message', function(message) {
 		
 	        .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
 		 
-            message.channel.sendEmbed(play_info)
+                message.channel.sendEmbed(play_info)
 
             return;
 
@@ -285,7 +285,7 @@ client.on('message', function(message) {
 
                         .setAuthor(client.user.username, client.user.avatarURL)
 
-                        .addField(':play_pause: **تمت إضافةالاغنيه بقائمة الإنتظار :**', `:musical_note: **${videoInfo.title}** :musical_note:`)
+                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار **', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
                         .setColor("RANDOM")
 		    
@@ -295,11 +295,11 @@ client.on('message', function(message) {
 		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
-                    message.channel.sendEmbed(play_info);
+                        message.channel.sendEmbed(play_info);
 
-                    queueNames.push(videoInfo.title);
+                        queueNames.push(videoInfo.title);
 
-                    now_playing.push(videoInfo.title);
+                        now_playing.push(videoInfo.title);
 
                 });
 
@@ -383,13 +383,13 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         // console.log(args)
 
-        if (args > 100) return message.channel.send(':sound: [1 - 100] | **لا أكثر ولا أقل** :sound:')
+        if (args > 100) return message.channel.send(':sound: **[1 - 100] | لا أكثر ولا أقل** :sound:')
 
-        if (args < 1) return message.channel.send(':sound: [1 - 100] | **لا أكثر ولا أقل** :sound:')
+        if (args < 1) return message.channel.send(':sound: **[1 - 100] | لا أكثر ولا أقل** :sound:')
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`:loud_sound: **[${dispatcher.volume*50}%] : مستوى الصوت** :loud_sound:`);
+        message.channel.sendMessage(`:loud_sound: | **[${dispatcher.volume*50}%] : مستوى الصوت** | :loud_sound:`);
 
     }
 
@@ -483,7 +483,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	    
-	     message.member.voiceChannel.join().thenmessage.channel.send({
+	    message.member.voiceChannel.join()
+	    
+	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
 		    
@@ -509,13 +511,13 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        if (isPlaying == false) return message.channel.send(':anger: | **تم التوقيف**');
+        if (isPlaying == false) return message.channel.send(':stop_button: | ** تم التوقيف الموسيقى**');
 
         let playing_now_info = new Discord.RichEmbed()
 
             .setAuthor(client.user.username, client.user.avatarURL)
 
-            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
+            .addField(':play_pause: | تمت إضافة الاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
 
             .setColor("RANDOM")
 
