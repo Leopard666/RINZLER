@@ -254,11 +254,23 @@ client.on('message', function(message) {
             let play_info = new Discord.RichEmbed()
 
                 .setAuthor(client.user.username, client.user.avatarURL)
+	    
+	        .setThumbnail(client.user.avatarURL)
 
                 .setFooter('طلب بواسطة : ' + message.author.tag)
-
-                .setDescription('**قم بإدراج رابط او اسم الأغنيه**')
+		
+	        .addField(':notes: | **قم بإدراج رابط او اسم الأغنيه**')
+		      
+	        .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+                .setColor('RANDOM')
 	    
+	        .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
+		
+	        .setFooter('● :flag_tn: [ THE GRID™ - OFFICIAL - 2019© ] :flag_tn: ●')
+		 
+	        .setTimestamp()
+
             message.channel.sendEmbed(play_info)
 
             return;
@@ -396,7 +408,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
-		
+		    
+	    .setThumbnail(client.user.avatarURL)
+
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
@@ -417,33 +431,85 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-            message.channel.send('`✔`').then(() => {
-
             dispatcher.resume();
+	    
+	    message.channel.send({
+	  
+	    embed: new Discord.RichEmbed()
+		    
+	    .setThumbnail(client.user.avatarURL)
 
-        });
-
-    }
+	    .setAuthor(client.user.username,client.user.avatarURL)
+				
+	    .addField(':arrow_forward: | **الان يتم تشغيل الموسيقى**')
+		      
+	    .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+            .setColor('RANDOM')
+		
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		 
+	    .setTimestamp()
+		    
+  })
+	
+}
 
     else if (mess.startsWith(prefix + 'stop')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        message.channel.send('`✔`');
-
         var server = server = servers[message.guild.id];
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+	    
+	    message.channel.send({
+	  
+	    embed: new Discord.RichEmbed()
+		    
+	    .setThumbnail(client.user.avatarURL)
 
-    }
+	    .setAuthor(client.user.username,client.user.avatarURL)
+				
+	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
+		      
+	    .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+            .setColor('RANDOM')
+		
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		 
+	    .setTimestamp()
+		    
+  })
+	
+}
 
     else if (mess.startsWith(prefix + 'join')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+	    
+	     message.member.voiceChannel.join().thenmessage.channel.send({
+	  
+	    embed: new Discord.RichEmbed()
+		    
+	    .setThumbnail(client.user.avatarURL)
 
-        message.member.voiceChannel.join().then(message.channel.send(':ballot_box_with_check: | **Rinzler : Has Joined Your Voice Channel**'));
-
-    }
+	    .setAuthor(client.user.username,client.user.avatarURL)
+				
+	    .addField(':ballot_box_with_check: | **I AM READY FOR FIGHT**')
+		      
+	    .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+            .setColor('RANDOM')
+		
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		 
+	    .setTimestamp()
+		    
+  })
+	
+}
 
     else if (mess.startsWith(prefix + 'play')) {
 
@@ -471,7 +537,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
 function skip_song(message) {
 
-    if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+    if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
     dispatcher.end();
 
