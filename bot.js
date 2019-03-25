@@ -250,8 +250,6 @@ client.on('message', function(message) {
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
 
-        // if user is not insert the URL or song title
-
         if (args.length == 0) {
 
             let play_info = new Discord.RichEmbed()
@@ -261,6 +259,8 @@ client.on('message', function(message) {
                 .setFooter('طلب بواسطة : ' + message.author.tag)
 
                 .setDescription('**قم بإدراج رابط او اسم الأغنيه**')
+	    
+	    	.setTimestamp()
 
             message.channel.sendEmbed(play_info)
 
@@ -329,14 +329,14 @@ client.on('message', function(message) {
                         .addField(`بواسطه :arrow_right:` , message.author.username)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
-		    
-                        .setTimestamp()
-		    
+		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
                         message.channel.sendEmbed(play_info)
 
                         message.channel.send(`:notes: **${videoInfo.title}** **: تم تشغيل** :notes:`)
+			
+	                .setTimestamp()
 
 
                 });
@@ -349,39 +349,55 @@ client.on('message', function(message) {
 
 else if (mess.startsWith(prefix + 'skip')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        message.channel.send('`✔`').then(() => {
+        message.channel.send('`✔ | Done`').then(() => {
+		
+	  embed: new Discord.RichEmbed()
+		
+	    .setAuthor(client.user.username,client.user.avatarURL)
+		
+            .setThumbnail(client.user.avatarURL)
+		
+	    .addField(':track_next: | **تم تجآوز هذآ المقطع**`)
+		      
+	    .addField(`بواسطه :arrow_right:` , message.author.username)
+      
+            .setColor('RANDOM')
+		
+	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+		
+	    .setTimestamp()
 
             skip_song(message);
 
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-
+		
         });
 
     }
 
-    else if (message.content.startsWith(prefix + 'vol')) {
+    else if (message.content.startsWith(prefix + 'volume')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
         // console.log(args)
 
-        if (args > 100) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+        if (args > 100) return message.channel.send(':sound: [1 - 100] | **لا أكثر ولا أقل** :sound:')
 
-        if (args < 1) return message.channel.send('1 - 100 || **__لا أكثر ولا أقل__**')
+        if (args < 1) return message.channel.send(':sound: [1 - 100] | **لا أكثر ولا أقل** :sound:')
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`**__ ${dispatcher.volume*50}% مستوى الصوت __**`);
+        message.channel.sendMessage(`:loud_sound: **[${dispatcher.volume*50}%] : مستوى الصوت** :loud_sound:`);
 
     }
 
     else if (mess.startsWith(prefix + 'pause')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
         message.channel.send('`✔`').then(() => {
 
@@ -391,9 +407,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     }
 
-    else if (mess.startsWith(prefix + 'ok')) {
+    else if (mess.startsWith(prefix + 'resume')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
             message.channel.send('`✔`').then(() => {
 
@@ -405,7 +421,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'stop')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
         message.channel.send('`✔`');
 
@@ -415,35 +431,31 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     }
 
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'join')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        message.member.voiceChannel.join().then(message.channel.send(':ok:'));
+        message.member.voiceChannel.join().then(message.channel.send(':ballot_box_with_check: | **Rinzler : Has Joined Your Voice Channel**'));
 
     }
 
     else if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
+        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        if (isPlaying == false) return message.channel.send(':anger: || **__تم التوقيف__**');
+        if (isPlaying == false) return message.channel.send(':anger: | **تم التوقيف**');
 
         let playing_now_info = new Discord.RichEmbed()
 
             .setAuthor(client.user.username, client.user.avatarURL)
 
-            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**
-                  ${videoInfo.title}
-                  **`)
+            .addField('تمت إضافةالاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
 
             .setColor("RANDOM")
 
             .setFooter('طلب بواسطة: ' + message.author.tag)
 
             .setThumbnail(videoInfo.thumbnailUrl)
-
-        //.setDescription('?')
 
         message.channel.sendEmbed(playing_now_info);
 
