@@ -356,9 +356,11 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: **${videoInfo.title}** :notes:`)
+                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `**Playing** :notes: ``${videoInfo.title}`` **- Now!**`)
 
                         .setColor("RANDOM")
+		    
+		        .addField('Like👍 :' , `${video.raw.likeCount}`, true)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
