@@ -280,7 +280,7 @@ client.on('message', function(message) {
 
             let play_info = new Discord.RichEmbed()
 
-                .setAuthor(client.user.username, client.user.avatarURL)
+                .setAuthor(message.author.username,message.author.avatarURL)
 	    
 	        .setThumbnail(client.user.avatarURL)
 		
@@ -312,7 +312,7 @@ client.on('message', function(message) {
 
                     let play_info = new Discord.RichEmbed()
 
-                        .setAuthor(client.user.username, client.user.avatarURL)
+                        .setAuthor(message.author.username,message.author.avatarURL)
 
                         .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار **', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
@@ -352,13 +352,11 @@ client.on('message', function(message) {
 
                     let play_info = new Discord.RichEmbed()
 
-                        .setAuthor(client.user.username, client.user.avatarURL)
+                        .setAuthor(message.author.username,message.author.avatarURL)
 
                         .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: **${videoInfo.title}** :notes:`)
 
                         .setColor("RANDOM")
-
-                        .addField(`● بواسطه :arrow_right:` , message.author.username)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
@@ -392,12 +390,10 @@ else if (mess.startsWith(prefix + 'next')) {
 	    embed: new Discord.RichEmbed()
 		    
 	    .setThumbnail(client.user.avatarURL)
-
-	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':track_next: | **تم تجآوز هذآ المقطع**')
 		      
-	    .addField(`● بواسطه :arrow_right:` , message.author.username)
+            .setAuthor(message.author.username,message.author.avatarURL)
       
             .setColor('RANDOM')
 		
@@ -441,9 +437,7 @@ else if (mess.startsWith(prefix + 'next')) {
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
-		      
-	    .addField(`● بواسطه :arrow_right:` , message.author.username)
-      
+		            
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
@@ -471,9 +465,7 @@ else if (mess.startsWith(prefix + 'next')) {
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':arrow_forward: | **الان يتم تشغيل الموسيقى**')
-		      
-	    .addField(`● بواسطه :arrow_right:` , message.author.username)
-      
+		            
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
@@ -503,9 +495,7 @@ else if (mess.startsWith(prefix + 'next')) {
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
-		      
-	    .addField(`● بواسطه :arrow_right:` , message.author.username)
-      
+		            
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
