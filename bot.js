@@ -399,7 +399,13 @@ else if (mess.startsWith(prefix + 'next')) {
 	
             skip_song(message);
 	
-            fetchVideoInfo(id, function(err, videoInfo) {
+               getID(args, function(id) {
+
+                queue.push('placeholder');
+
+                fetchVideoInfo(id, function(err, videoInfo) {
+
+                    if (err) throw new Error(err);
 
             var server = server = servers[message.guild.id];
 
@@ -427,9 +433,12 @@ else if (mess.startsWith(prefix + 'next')) {
 		 
 	    .setTimestamp()
 		    
-	});
-		    
-     })		   
+	           });
+			
+	    });
+	    
+     })
+	
 }
 			   
 	
