@@ -434,7 +434,7 @@ else if (mess.startsWith(prefix + 'next')) {
 		    
 	    .setThumbnail(client.user.avatarURL)
 
-	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
 		            
@@ -462,7 +462,7 @@ else if (mess.startsWith(prefix + 'next')) {
 		    
 	    .setThumbnail(client.user.avatarURL)
 
-	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':arrow_forward: | **الان يتم تشغيل الموسيقى**')
 		            
@@ -492,7 +492,7 @@ else if (mess.startsWith(prefix + 'next')) {
 		    
 	    .setThumbnail(client.user.avatarURL)
 
-	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
 		            
@@ -520,7 +520,7 @@ else if (mess.startsWith(prefix + 'next')) {
 		    
 	    .setThumbnail(client.user.avatarURL)
 
-	    .setAuthor(client.user.username,client.user.avatarURL)
+            .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':ballot_box_with_check: | **● I AM READY FOR FIGHT ●**')
 		    
@@ -546,13 +546,11 @@ else if (mess.startsWith(prefix + 'next')) {
 
         let playing_now_info = new Discord.RichEmbed()
 
-            .setAuthor(client.user.username, client.user.avatarURL)
+            .setAuthor(message.author.username,message.author.avatarURL)
 
             .addField(':play_pause: | تمت إضافة الاغنيه بقائمة الإنتظار', `**${videoInfo.title}**`)
 
             .setColor("RANDOM")
-
-            .setFooter('طلب بواسطة : ' + message.author.tag)
 
             .setThumbnail(videoInfo.thumbnailUrl)
 
