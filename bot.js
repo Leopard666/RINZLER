@@ -362,7 +362,7 @@ client.on('message', function(message) {
 		 		    
 		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
 		    
-		        .addField('● ``Dislike 👎 :``' , `${videoInfo.raw.dislikeCount}` , true)
+		        .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
 		    
 		        .addField('● ``Time The Video :clock11: :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}`, true)
 		    
