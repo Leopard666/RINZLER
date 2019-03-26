@@ -352,10 +352,6 @@ client.on('message', function(message) {
 
             getID(args, function(id) {
 
-                queue.push('placeholder');
-
-                playMusic(id, message);
-
                 fetchVideoInfo(id, function(err, videoInfo) {
 
                     if (err) throw new Error(err);
