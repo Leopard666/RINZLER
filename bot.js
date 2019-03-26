@@ -366,7 +366,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Time The Video :clock11: :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}`, true)
 		    
-                        .setThumbnail(videoInfo.thumbnails.high.url)
+                        .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
