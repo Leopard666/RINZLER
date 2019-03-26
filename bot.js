@@ -360,7 +360,7 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		    
-		        .addField('Like👍 :' , `${video.raw.likeCount}`, true)
+		        .addField('Like👍 :' , `${videoInfo.likeCount}`, true)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
