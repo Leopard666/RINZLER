@@ -360,7 +360,7 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		 
-		        .addField('● ``Channel ID :id: :``' , `${videoInfo.raw.snippet.channelId}`, true)
+		        .addField('● ``Channel ID :id: :``' , `${videoInfo.raw.channelId}`, true)
 		    
 		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}`, true)
 		    
@@ -368,7 +368,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Time The Video :clock11: :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}`, true)
 		    
-                        .setThumbnail(videoInfo.thumbnailUrl)
+                        .setThumbnail(videoInfo.thumbnails.high.url)
 		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
