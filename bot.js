@@ -288,11 +288,11 @@ client.on('message', function(message) {
 		            
                 .setColor('RANDOM')
 	    
-	        .addField('**● BOT CMD** :robot: :' , `**Use -help For Bot Commands**`)
+	        .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
 	    
-	    	.addField('**● MUSIC CMD** :musical_note: : :' , `**Use -play For Playing Music**`)
+	    	.addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
 
-	        .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
+	        .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 		
 	        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
@@ -356,7 +356,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: | **Playing : ${videoInfo.title} - Now !**`)
+                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
 
                         .setColor("RANDOM")
 		 		    
@@ -364,7 +364,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
 		    
-		        .addField('● ``Views 👥 :``' , `${videoInfo.views}`, true)
+		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 		    
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
@@ -532,9 +532,9 @@ else if (mess.startsWith(prefix + 'next')) {
 
             .setAuthor(message.author.username,message.author.avatarURL)
 				
-	    .addField(':ballot_box_with_check: | **● I AM READY FOR FIGHT ●**')
+	    .addField(':ballot_box_with_check: | **★・。I AM READY FOR FIGHT・゜★**')
 		    
-	    .addField('**● BOT CMD** 🔮 :' , `**Use -help For Bot Commands**`)
+	    .addField('● ``BOT CMD 🔮 :``' , `**Use -help For Bot Commands**`)
                 
             .setColor('RANDOM')
 		
