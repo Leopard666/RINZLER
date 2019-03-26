@@ -401,8 +401,6 @@ else if (mess.startsWith(prefix + 'next')) {
 	
                getID(args, function(id) {
 
-                queue.push('placeholder');
-
                 fetchVideoInfo(id, function(err, videoInfo) {
 
                     if (err) throw new Error(err);
