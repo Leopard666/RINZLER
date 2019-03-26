@@ -316,7 +316,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: | Next Song : **${videoInfo.title}** - :thumbsup:`)
+                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: | Next Song Playing : **${videoInfo.title}** - ❤`)
 
                         .setColor("RANDOM")
 		    
@@ -398,6 +398,8 @@ else if (mess.startsWith(prefix + 'next')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
             skip_song(message);
+	
+            fetchVideoInfo(id, function(err, videoInfo) {
 
             var server = server = servers[message.guild.id];
 
@@ -406,21 +408,31 @@ else if (mess.startsWith(prefix + 'next')) {
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
+		    				
+	    .addField(':track_next: | **تم تجآوز المقطع**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
+		       
+	    .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
 		    
-	    .setThumbnail(client.user.avatarURL)
-				
-	    .addField(':track_next: | **تم تجآوز هذآ المقطع**')
-		      
+            .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
+		    
+	    .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
+		    
+            .setThumbnail(videoInfo.thumbnailUrl)
+ 
             .setAuthor(message.author.username,message.author.avatarURL)
       
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
-	    .setTimestamp()				     
-})
+	    .setTimestamp()
+		    
+         })
 	
+     }
+			   
 }
+			   
 	
 // ==================================================================
 			
