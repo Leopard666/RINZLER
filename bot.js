@@ -399,6 +399,10 @@ else if (mess.startsWith(prefix + 'next')) {
 	
             skip_song(message);
 	
+                playMusic(id, message);
+	
+	          queue.push('placeholder');
+
                getID(args, function(id) {
 
                 fetchVideoInfo(id, function(err, videoInfo) {
