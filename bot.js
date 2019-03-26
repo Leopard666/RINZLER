@@ -356,7 +356,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `**Playing** :notes: ``${videoInfo.title}`` **- Now!**`)
+                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `**Playing :notes: ${videoInfo.title} - Now!**`)
 
                         .setColor("RANDOM")
 		    
