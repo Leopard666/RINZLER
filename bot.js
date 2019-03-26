@@ -359,6 +359,10 @@ client.on('message', function(message) {
                 fetchVideoInfo(id, function(err, videoInfo) {
 
                     if (err) throw new Error(err);
+			
+		     queueNames.push(videoInfo.title);
+
+                       now_playing.push(videoInfo.title);
 
                     let play_info = new Discord.RichEmbed()
 
