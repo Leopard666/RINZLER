@@ -398,14 +398,6 @@ else if (mess.startsWith(prefix + 'next')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
             skip_song(message);
-		
-	          queue.push('placeholder');
-
-               getID(args, function(id) {
-
-                fetchVideoInfo(id, function(err, videoInfo) {
-
-                    if (err) throw new Error(err);
 
             var server = server = servers[message.guild.id];
 
@@ -417,14 +409,14 @@ else if (mess.startsWith(prefix + 'next')) {
 		    				
 	    .addField(':track_next: | **تم تجآوز المقطع**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
 		       
-	    .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
+	    .setThumbnail(client.user.avatarURL)
 		    
-            .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
-		    
-	    .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
-		    
-            .setThumbnail(videoInfo.thumbnailUrl)
- 
+	    .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
+	    
+	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
+
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
+				    
             .setAuthor(message.author.username,message.author.avatarURL)
       
             .setColor('RANDOM')
@@ -432,16 +424,11 @@ else if (mess.startsWith(prefix + 'next')) {
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
-		    
-	           });
-			
-	    });
-	    
+
      })
 	
 }
 			   
-	
 // ==================================================================
 			
     else if (message.content.startsWith(prefix + 'volume')) {
@@ -580,7 +567,7 @@ else if (mess.startsWith(prefix + 'next')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        if (isPlaying == false) return message.channel.send(':stop_button: | ** تم التوقيف الموسيقى**');
+        if (isPlaying == false) return message.channel.send(':stop_button: | **تم التوقيف الموسيقى**');
 
         let playing_now_info = new Discord.RichEmbed()
 
