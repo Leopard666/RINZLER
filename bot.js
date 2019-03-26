@@ -288,9 +288,11 @@ client.on('message', function(message) {
 		            
                 .setColor('RANDOM')
 	    
+	        .addField('**● BOT CMD** 🔮 :' , `**Use -help For Bot Commands**`)
+
 	        .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
 		
-	        .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	        .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
                  message.channel.sendEmbed(play_info)
 
@@ -356,7 +358,7 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 
-                        .addField(`بواسطه :arrow_right:` , message.author.username)
+                        .addField(`● بواسطه :arrow_right:` , message.author.username)
 
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
@@ -395,11 +397,11 @@ else if (mess.startsWith(prefix + 'next')) {
 				
 	    .addField(':track_next: | **تم تجآوز هذآ المقطع**')
 		      
-	    .addField(`بواسطه :arrow_right:` , message.author.username)
+	    .addField(`● بواسطه :arrow_right:` , message.author.username)
       
             .setColor('RANDOM')
 		
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()				     
 })
@@ -440,11 +442,11 @@ else if (mess.startsWith(prefix + 'next')) {
 				
 	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
 		      
-	    .addField(`بواسطه :arrow_right:` , message.author.username)
+	    .addField(`● بواسطه :arrow_right:` , message.author.username)
       
             .setColor('RANDOM')
 		
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
 		    
@@ -470,11 +472,11 @@ else if (mess.startsWith(prefix + 'next')) {
 				
 	    .addField(':arrow_forward: | **الان يتم تشغيل الموسيقى**')
 		      
-	    .addField(`بواسطه :arrow_right:` , message.author.username)
+	    .addField(`● بواسطه :arrow_right:` , message.author.username)
       
             .setColor('RANDOM')
 		
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
 		    
@@ -502,11 +504,11 @@ else if (mess.startsWith(prefix + 'next')) {
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
 		      
-	    .addField(`بواسطه :arrow_right:` , message.author.username)
+	    .addField(`● بواسطه :arrow_right:` , message.author.username)
       
             .setColor('RANDOM')
 		
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
 		    
@@ -530,13 +532,13 @@ else if (mess.startsWith(prefix + 'next')) {
 
 	    .setAuthor(client.user.username,client.user.avatarURL)
 				
-	    .addField(':ballot_box_with_check: | **I AM READY FOR FIGHT**')
-		      
-	    .addField(`بواسطه :arrow_right:` , message.author.username)
-      
+	    .addField(':ballot_box_with_check: | **● I AM READY FOR FIGHT ●**')
+		    
+	    .addField('**● BOT CMD** 🔮 :' , `**Use -help For Bot Commands**`)
+                
             .setColor('RANDOM')
 		
-	    .setFooter('● 🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰 ●')
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
 		    
