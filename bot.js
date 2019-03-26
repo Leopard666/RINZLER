@@ -359,9 +359,7 @@ client.on('message', function(message) {
                         .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `**Playing :notes: ${videoInfo.title} - Now!**`)
 
                         .setColor("RANDOM")
-		 
-		        .addField('● ``Views :busts_in_silhouette: :``' , `${videoInfo.raw.views}` , true)
-		    
+		 		    
 		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
 		    
 		        .addField('● ``Dislike 👎 :``' , `${videoInfo.raw.dislikeCount}` , true)
