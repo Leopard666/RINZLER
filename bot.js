@@ -202,13 +202,13 @@ client.on("message", async message => {
 	
     if (command == "leaveserver") {
 	    
-        if(!args[0] || args[1]) return message.reply(`**${prefix}leave <guild_id>**`);
+        if(!args[0] || args[1]) return message.reply(`| Type : **${prefix}leaveserver & <guild_id>** | :x:`);
 	    	  
         let GuildId = client.guilds.get(args[0])
 	
         if(!GuildId) return message.reply(`**:x: | Guild "ID" Is Not Detected | :x:**`);
 	    
-        GuildId.leave().then(m => message.channel.send("**Done | I Have Left : ["+GuildId.name+"] Server | ✅**"))
+        GuildId.leave().then(m => message.channel.send("Done | I Have Left : **["+GuildId.name+"]** Server | ✅"))
     }     
 })
 
