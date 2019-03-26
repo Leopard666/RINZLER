@@ -398,9 +398,7 @@ else if (mess.startsWith(prefix + 'next')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
             skip_song(message);
-	
-                playMusic(id, message);
-	
+		
 	          queue.push('placeholder');
 
                getID(args, function(id) {
