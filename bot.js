@@ -356,7 +356,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `**Playing :notes: ${videoInfo.title} - Now!**`)
+                        .addField('**:arrow_forward: | تم التشغيل الموسيقى**' , `:notes: | **Playing : ${videoInfo.title} - Now !**`)
 
                         .setColor("RANDOM")
 		 		    
@@ -364,11 +364,13 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
 		    
-		        .addField('● ``Time The Video :clock11: :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}`, true)
+		        .addField('● ``Views 👥 :``' , `${videoInfo.views}`, true)
 		    
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
+		    
+		        .setTimestamp()
 
                         message.channel.sendEmbed(play_info)
 			
