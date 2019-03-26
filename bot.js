@@ -316,12 +316,20 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: **${videoInfo.title}** :musical_note:`)
+                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: | Next Song : **${videoInfo.title}** - :thumbsup:`)
 
                         .setColor("RANDOM")
 		    
+		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
+		    
+		        .addField('● ``Dislike 👎 :``' , `${videoInfo.dislikeCount}` , true)
+		    
+		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
+		    
                         .setThumbnail(videoInfo.thumbnailUrl)
-		    		    
+		    
+		        .setTimestamp()
+		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 
                         message.channel.sendEmbed(play_info);
