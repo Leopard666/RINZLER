@@ -360,11 +360,11 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		 
-		        .addField('● ``Channel ID :id: :``' , `${videoInfo.raw.channelId}`, true)
+		        .addField('● ``Views :busts_in_silhouette: :``' , `${videoInfo.raw.views}` , true)
 		    
-		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}`, true)
+		        .addField('● ``Like 👍 :``' , `${videoInfo.likeCount}` , true)
 		    
-		        .addField('● ``Dislike 👎 :``' , `${videoInfo.raw.dislikeCount}`, true)
+		        .addField('● ``Dislike 👎 :``' , `${videoInfo.raw.dislikeCount}` , true)
 		    
 		        .addField('● ``Time The Video :clock11: :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}`, true)
 		    
