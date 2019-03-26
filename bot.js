@@ -288,7 +288,9 @@ client.on('message', function(message) {
 		            
                 .setColor('RANDOM')
 	    
-	        .addField('**● BOT CMD** 🔮 :' , `**Use -help For Bot Commands**`)
+	        .addField('**● BOT CMD** :robot: :' , `**Use -help For Bot Commands**`)
+	    
+	    	.addField('**● MUSIC CMD** :musical_note: : :' , `**Use -play For Playing Music**`)
 
 	        .addField('**● BOT - VERSION** :robot: :' , `**[ v1.2 ]**`)
 		
@@ -314,7 +316,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار **', `:musical_note: **${videoInfo.title}** :musical_note:`)
+                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: **${videoInfo.title}** :musical_note:`)
 
                         .setColor("RANDOM")
 		    
