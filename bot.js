@@ -352,13 +352,13 @@ client.on('message', function(message) {
 
             getID(args, function(id) {
 
+                queue.push('placeholder');
+
+                playMusic(id, message);
+
                 fetchVideoInfo(id, function(err, videoInfo) {
 
                     if (err) throw new Error(err);
-			
-		     queueNames.push(videoInfo.title);
-
-                       now_playing.push(videoInfo.title);
 
                     let play_info = new Discord.RichEmbed()
 
@@ -406,19 +406,19 @@ else if (mess.startsWith(prefix + 'next')) {
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
-		    				
-	    .addField(':track_next: | **تم تجآوز المقطع**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
-		       
+		    
 	    .setThumbnail(client.user.avatarURL)
 		    
+            .setAuthor(message.author.username,message.author.avatarURL)
+		    				
+	    .addField(':track_next: | **تم تجآوز المقطع**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
+		       		    
 	    .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
 	    
 	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
 
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
-            .setAuthor(message.author.username,message.author.avatarURL)
-      
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
