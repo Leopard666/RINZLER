@@ -396,9 +396,7 @@ client.on('message', function(message) {
 else if (mess.startsWith(prefix + 'next')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-	
-	   if (!skip_song) return message.channel.send('لا يتوفر مقطع لتجآوزه');
-	
+		
               skip_song(message);
 
             var server = server = servers[message.guild.id];
