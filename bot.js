@@ -597,13 +597,13 @@ else if (mess.startsWith(prefix + 'next')) {
 
 // ==================================================================
 
-function skip_song(message) {
+//function skip_song(message) {
 
-    if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+    //if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-    dispatcher.end();
+   // dispatcher.end();
 
-}
+//}
 
 function playMusic(id, message) {
 
