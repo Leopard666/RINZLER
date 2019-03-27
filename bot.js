@@ -393,7 +393,7 @@ client.on('message', function(message) {
 	
 // ==================================================================
 
-else if (mess.startsWith(prefix + 'next')) {
+else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 		
@@ -597,13 +597,13 @@ else if (mess.startsWith(prefix + 'next')) {
 
 // ==================================================================
 
-//function skip_song(message) {
+function skip_song(message) {
 
-    //if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+    if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-   // dispatcher.end();
+   dispatcher.end();
 
-//}
+}
 
 function playMusic(id, message) {
 
@@ -763,7 +763,7 @@ client.on('message', message => {
 
 ● :headphones: : ${prefix}play :arrow_right: لتشغيل اغنية ●
 
-● :headphones: : ${prefix}next :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
+● :headphones: : ${prefix}skip :arrow_right: للإنتقاال الى الاغنيه التاليه اذا كان هناك بقائمة الانتظار ●
 
 ● :headphones: : ${prefix}volume :arrow_right: لتغير حجم الصوت ●
 
