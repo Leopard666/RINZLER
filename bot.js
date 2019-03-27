@@ -411,12 +411,8 @@ else if (mess.startsWith(prefix + 'next')) {
 		    
             .setAuthor(message.author.username,message.author.avatarURL)
 		    				
-	    .addField(':track_next: | **تم تجآوز المقطع**' , `:notes: | Playing : **${videoInfo.title}** - Now !`)
-		       		    
-	    .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
-	    
-	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
-
+	    .addField(':track_next: | **تم تجآوز المقطع**')		       		    
+	  
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
             .setColor('RANDOM')
@@ -462,6 +458,8 @@ else if (mess.startsWith(prefix + 'next')) {
             .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':pause_button: | **تم إيقاف الموسيقى مؤقتا**')
+		    
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 		            
             .setColor('RANDOM')
 		
@@ -490,7 +488,9 @@ else if (mess.startsWith(prefix + 'next')) {
             .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':arrow_forward: | **الان يتم تشغيل الموسيقى**')
-		            
+		    
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
+                
             .setColor('RANDOM')
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
@@ -520,6 +520,12 @@ else if (mess.startsWith(prefix + 'next')) {
             .setAuthor(message.author.username,message.author.avatarURL)
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
+		    
+	    .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
+	    
+	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
+		    
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 		            
             .setColor('RANDOM')
 		
@@ -550,6 +556,10 @@ else if (mess.startsWith(prefix + 'next')) {
 	    .addField(':ballot_box_with_check: | **★・。I AM READY FOR FIGHT・゜★**')
 		    
 	    .addField('● ``BOT CMD 🔮 :``' , `**Use -help For Bot Commands**`)
+		    
+	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
+		    
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
                 
             .setColor('RANDOM')
 		
