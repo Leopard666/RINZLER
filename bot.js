@@ -398,7 +398,9 @@ else if (mess.startsWith(prefix + 'skip')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 		
               skip_song(message);
-
+	
+	        dispatcher.skip();
+	
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
@@ -597,13 +599,13 @@ else if (mess.startsWith(prefix + 'skip')) {
 
 // ==================================================================
 
-function skip_song(message) {
+//function skip_song(message) {
 
-    if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+    //if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-   dispatcher.end();
+  // dispatcher.end();
 
-}
+//}
 
 function playMusic(id, message) {
 
