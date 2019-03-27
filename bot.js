@@ -399,7 +399,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		
               //skip_song(message);
 	
-	        dispatcher.skip();
+	        dispatcher.skip_song();
 	
             var server = server = servers[message.guild.id];
 
