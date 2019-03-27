@@ -273,27 +273,9 @@ client.on('message', function(message) {
     const args = message.content.split(' ').slice(1).join(' ');
 
     if (mess.startsWith(prefix + 'play')) {
-	    
-        const permissions = voiceChannel.permissionsFor(msg.client.user);
-	    
-        const voiceChannel = msg.member.voiceChannel;
-
+	    	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');   
-	    
-	  if (!permissions.has('CONNECT')) {
-		  
-            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم').then(message =>{message.delete(2000)})
-        }
-        if (!permissions.has('SPEAK')) {
-		
-            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم').then(message =>{message.delete(2000)})
-        }
- 
-        if (!permissions.has('EMBED_LINKS')) {
-		
-            return msg.channel.sendMessage("**يجب توآفر برمشن `EMBED LINKS`لدي **rl").then(message =>{message.delete(2000)})
-            }
-
+		 
         if (args.length == 0) {
 
             let play_info = new Discord.RichEmbed()
