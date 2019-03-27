@@ -274,7 +274,21 @@ client.on('message', function(message) {
 
     if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');   
+	    
+	  if (!permissions.has('CONNECT')) {
+		  
+            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم').then(message =>{message.delete(2000)})
+        }
+        if (!permissions.has('SPEAK')) {
+		
+            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم').then(message =>{message.delete(2000)})
+        }
+ 
+        if (!permissions.has('EMBED_LINKS')) {
+		
+            return msg.channel.sendMessage("**يجب توآفر برمشن `EMBED LINKS`لدي **rl").then(message =>{message.delete(2000)})
+            }
 
         if (args.length == 0) {
 
@@ -397,9 +411,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 		
-              //skip_song(message);
-	
-	        dispatcher.skip_song();
+              skip_song(message);
 	
             var server = server = servers[message.guild.id];
 
