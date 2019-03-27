@@ -273,6 +273,10 @@ client.on('message', function(message) {
     const args = message.content.split(' ').slice(1).join(' ');
 
     if (mess.startsWith(prefix + 'play')) {
+	    
+        const permissions = voiceChannel.permissionsFor(msg.client.user);
+	    
+        const voiceChannel = msg.member.voiceChannel;
 
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');   
 	    
