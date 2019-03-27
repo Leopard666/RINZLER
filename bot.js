@@ -397,7 +397,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 		
-              skip_song(message);
+              //skip_song(message);
 	
 	        dispatcher.skip();
 	
