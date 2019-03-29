@@ -439,7 +439,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         dispatcher.setVolume(1 * args / 50);
 
-	    message.channel.send({
+	   message.channel.sendMessage({
 	    
 	    embed: new Discord.RichEmbed()
 		    
@@ -447,7 +447,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		    
             .setAuthor(message.author.username,message.author.avatarURL)
 		    				
-	    .setDescription(`** :loud_sound: | ``مستوى الصوت`` **:** ${dispatcher.volume*50} %`) 
+	    .setDescription(`:loud_sound: | ``مستوى الصوت`` **: ${dispatcher.volume*50}%**`) 
  
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
