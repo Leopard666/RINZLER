@@ -368,7 +368,9 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		    
-		        .addField('● ``Video Time :``' , `${videoInfo.duration.time}`, true)
+		        .addField('● ``Channel Name :``' , `${videoInfo.channel.title}` , true)
+		    
+		        .addField('● ``Video Time :``' , `${videoInfo.duration.minutes}`, true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
@@ -542,11 +544,15 @@ else if (mess.startsWith(prefix + 'skip')) {
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
 		    
-	    .addField('● ``BOT CMD`` :robot: **:**' , `**Use -help For Bot Commands**`)
+	    .addField(':stop_button: | **RINZLER : IS HAS DISACTIVATED NOW**')
+
+	    .addField('● ``BOT CMD`` :keyboard: **:**' , `**Use -help For Bot Commands**`)
 	    
 	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
 		    
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
+		    
+	    .addField('● ``BOT - OWNER/CREATOR`` 👑 **:**' , `**[ <@480540559233122324> ]**`)
 		            
             .setColor('RANDOM')
 		
@@ -574,13 +580,15 @@ else if (mess.startsWith(prefix + 'skip')) {
 
             .setAuthor(message.author.username,message.author.avatarURL)
 				
-	    .addField(':ballot_box_with_check: | **★・。I AM READY FOR FIGHT・゜★**')
+	    .addField(':ballot_box_with_check: | **★・。RINZLER : IS READY FOR FIGHT NOW ・゜★**')
 		    
-	    .addField('● ``BOT CMD 🔮 :``' , `**Use -help For Bot Commands**`)
+	    .addField('● ``BOT CMD :keyboard: :``' , `**Use -help For Bot Commands**`)
 		    
 	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
 		    
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
+		    
+	    .addField('● ``BOT - OWNER/CREATOR`` 👑 **:**' , `**[ <@480540559233122324> ]**`)
                 
             .setColor('RANDOM')
 		
