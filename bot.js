@@ -368,7 +368,7 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		    
-		        .addField('● ``Video Time :``' , `${videoInfo.duration}`, true)
+		        .addField('● ``Video Time :``' , `${videoInfo.duration.hours} : ${videoInfo.duration.minutes} : ${videoInfo.duration.seconds}`, true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
