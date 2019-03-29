@@ -439,7 +439,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         dispatcher.setVolume(1 * args / 50)
 	    
-        message.channel.sendMessage(`:loud_sound: | ``[${dispatcher.volume*50}]% : تم تغير مستوى الصوت`` | :loud_sound:`);
+        message.channel.sendMessage(':loud_sound: | ``[${dispatcher.volume*50}]% : تم تغير مستوى الصوت`` | :loud_sound:');
 
 	  message.channel.send({
 	    
