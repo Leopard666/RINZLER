@@ -282,9 +282,6 @@ client.on('message', function(message) {
 
     const args = message.content.split(' ').slice(1).join(' ');
 	
-    const serverQueue = queue.get(message.guild.id);
-
-
     if (mess.startsWith(prefix + 'play')) {
 	    	    
         if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**'); 
@@ -414,10 +411,8 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
-	if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
-	    
-	 serverQueue.connection.dispatcher.end('Skip command has been used!');
-		
+         dispatcher.end('Skip command has been used!');
+	    		
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
