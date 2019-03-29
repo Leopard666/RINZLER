@@ -20,7 +20,7 @@ let cdseconds = 5;
 
 client.on('ready', function() {
 
-    console.log(`IM READY TO FIGHT : ${client.user.username}`);
+    console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
 
 });
 
@@ -368,7 +368,7 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		    
-		        .addField('● ``Channel Name :``' , `${videoInfo.channel.title}` , true)
+		        .addField('● ``Channel ID :``' , `${videoInfo.channelId}` , true)
 		    
 		        .addField('● ``Video Time :``' , `${videoInfo.duration.minutes}`, true)
 		    
