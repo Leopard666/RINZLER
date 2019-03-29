@@ -374,6 +374,8 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 		    
+		        .addField('Time The Video :' , `${videoInfo.time}`, true)
+		    
                         .setThumbnail(videoInfo.thumbnailUrl)
 		    		    
                         .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
