@@ -447,7 +447,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		    
             .setAuthor(message.author.username,message.author.avatarURL)
 		    				
-	    .addField(':loud_sound: | ``مستوى الصوت`` **:**' , `${dispatcher.volume*50}` , true)
+	    .addField(':loud_sound: | ``مستوى الصوت`` **:**' , `${dispatcher.setvolume*50}` , true)
  
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
