@@ -271,10 +271,13 @@ client.on('message', function(message) {
     const mess = message.content.toLowerCase();
 
     const args = message.content.split(' ').slice(1).join(' ');
+	
+    const serverQueue = queue.get(msg.guild.id);
+
 
     if (mess.startsWith(prefix + 'play')) {
 	    	    
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**');   
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**'); 
 		 
         if (args.length == 0) {
 
@@ -316,7 +319,7 @@ client.on('message', function(message) {
 
                         .setAuthor(message.author.username,message.author.avatarURL)
 
-                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: | Next Song Playing : **${videoInfo.title}** - ❤`)
+                        .addField(':play_pause: | **تمت إضافة الاغنيه بقائمة الإنتظار**', `:musical_note: | Next Song Playing : **${videoInfo.title}** :ghost:`)
 
                         .setColor("RANDOM")
 		    
@@ -368,9 +371,9 @@ client.on('message', function(message) {
 
                         .setColor("RANDOM")
 		    
-		        .addField('● ``Channel ID :``' , `${videoInfo.channelId}` , true)
+		        .addField('● ``Channel ID 🆔 :``' , `[${videoInfo.channelId}]` , true)
 		    
-		        .addField('● ``Video Time :``' , `${videoInfo.duration.minutes}`, true)
+		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.minutes}`, true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
@@ -400,6 +403,10 @@ client.on('message', function(message) {
 else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+	
+	if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
+	    
+	 serverQueue.connection.dispatcher.end('Skip command has been used!');
 		
             var server = server = servers[message.guild.id];
 
@@ -544,7 +551,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
 		    
-	    .addField(':stop_button: | **RINZLER : IS HAS DISACTIVATED NOW**')
+	    .addField(':red_circle: | **RINZLER : IS HAS DISACTIVATED NOW**')
 
 	    .addField('● ``BOT CMD`` :keyboard: **:**' , `**Use -help For Bot Commands**`)
 	    
