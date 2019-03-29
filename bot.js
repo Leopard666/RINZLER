@@ -439,10 +439,27 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         dispatcher.setVolume(1 * args / 50);
 
-        message.channel.sendMessage(`:loud_sound: | **[${dispatcher.volume*50}%] : مستوى الصوت** | :loud_sound:`);
-
+        message.channel.sendMessage({
+	    
+	    embed: new Discord.RichEmbed()
+		    
+	    .setThumbnail(client.user.avatarURL)
+		    
+            .setAuthor(message.author.username,message.author.avatarURL)
+		    				
+	    .addField(':loud_sound: | ``مستوى الصوت`` **:**' , `${dispatcher.volume*50}`% , true)
+ 
+	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
+				    
+            .setColor('RANDOM')
+		
+	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
+		 
+	    .setTimestamp()
+})
+	    
     }
-	
+							      
 // ==================================================================
 
     else if (mess.startsWith(prefix + 'pause')) {
