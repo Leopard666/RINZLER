@@ -18,6 +18,16 @@ let cdseconds = 5;
 
 // ==================================================================
 
+////////////////// [ 🔰 CONSOL RINZLER LOGS 🔰 ] //////////////////
+
+client.on('warn', console.warn);
+
+client.on('error', console.error);
+
+client.on('disconnect', () => console.log('🔰 I Just Disconnected, Making SureYyou Know, I Will Reconnect Now... 🔰'));
+
+client.on('reconnecting', () => console.log('🔰 I Am Reconnecting Now ! 🔰'));
+
 client.on('ready', function() {
 
     console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
@@ -272,7 +282,7 @@ client.on('message', function(message) {
 
     const args = message.content.split(' ').slice(1).join(' ');
 	
-    const serverQueue = queue.get(msg.guild.id);
+    const serverQueue = queue.get(message.guild.id);
 
 
     if (mess.startsWith(prefix + 'play')) {
