@@ -433,13 +433,13 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-        if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
+        if (args > 100) return message.channel.send(':sound: | ``[1 - 100] : لا أكثر ولا أقل`` | :sound:')
 
-        if (args < 1) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
+        if (args < 1) return message.channel.send(':sound: | ``[1 - 100] : لا أكثر ولا أقل`` | :sound:')
 
         dispatcher.setVolume(1 * args / 50)
 	    
-        message.channel.sendMessage(`**${dispatcher.volume*50} %**  : مستوى الصوت | :speaker:`);
+        message.channel.sendMessage(`:loud_sound: | ``[${dispatcher.volume*50}]% : تم تغير مستوى الصوت`` | :loud_sound:`);
 
 	  message.channel.send({
 	    
@@ -449,7 +449,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		    
             .setAuthor(message.author.username,message.author.avatarURL)
 		    				
-	    .addField(':loud_sound: | تم تغير الصوت | :loud_sound:')
+	    .addField(':loud_sound: | تم تغير مستوى الصوت | :loud_sound:')
  
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
