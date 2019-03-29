@@ -437,17 +437,17 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (args < 1) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
-        dispatcher.setVolume(1 * args / 50);
+        if dispatcher.setVolume(1 * args / 50) {
 
-	   message.channel.send({
+	  return message.channel.send({
 	    
 	    embed: new Discord.RichEmbed()
-		    
+		   
 	    .setThumbnail(client.user.avatarURL)
 		    
             .setAuthor(message.author.username,message.author.avatarURL)
 		    				
-	    .addField(':loud_sound: | ``مستوى الصوت`` **:**' , `${dispatcher.setvolume*50}` , true)
+	    .addField(':loud_sound: | ``مستوى الصوت`` **:**' , `**${dispatcher.volume*50} %**` , true)
  
 	    .addField('● ``BOT - VERSION`` :robot: **:**' , `**[ v1.2 ]**`)
 				    
@@ -457,7 +457,8 @@ else if (mess.startsWith(prefix + 'skip')) {
 		 
 	    .setTimestamp()
 })
-	    
+		
+}	    
     }
 							      
 // ==================================================================
