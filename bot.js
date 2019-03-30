@@ -446,15 +446,15 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (message.content.startsWith(prefix + 'volume')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+	    
+	dispatcher.end(':x: Skip Command Has Been Used ! :x:');
 
         if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
         if (args < 1) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
         dispatcher.setVolume(1 * args / 50);
-	    
-        dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	    
+	    	    
         message.channel.sendMessage(`**:loud_sound:  |  [ ${dispatcher.volume*50}% ] : تم تغير مستوى الصوت  |  :loud_sound:**`);
 
 	  message.channel.send({
@@ -483,10 +483,10 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'pause')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-
-            dispatcher.pause();
 	    
 	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+	    
+	    dispatcher.pause();
 
 	    message.channel.send({
 	  
@@ -516,9 +516,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-            dispatcher.resume();
-	    
 	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+
+            dispatcher.resume();
 	    
 	    message.channel.send({
 	  
@@ -547,13 +547,13 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'stop')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-
+	    	    
+	dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+	   
         var server = server = servers[message.guild.id];
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-	    
-	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	    
+	    	    
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
@@ -589,6 +589,8 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'join')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+	    	    
+	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
 	    
 	    message.member.voiceChannel.join()
 	    
