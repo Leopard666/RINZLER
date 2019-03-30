@@ -515,10 +515,14 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'resume')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+	    
+         dispatcher.resume();
 
-	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+	 function dispatcher.resume(); {
+	
+          if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
-            dispatcher.resume();
+            dispatcher.end();
 	    
 	    message.channel.send({
 	  
@@ -538,9 +542,10 @@ else if (mess.startsWith(prefix + 'skip')) {
 		 
 	    .setTimestamp()
 		    
-  })
+       })
+    }
 	
-}
+ }
 	
 // ==================================================================
 
@@ -655,6 +660,9 @@ function skip_song(message) {
   dispatcher.end();
 
 }
+
+// ==================================================================
+
 
 function playMusic(id, message) {
 
