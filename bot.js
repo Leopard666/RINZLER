@@ -513,17 +513,13 @@ else if (mess.startsWith(prefix + 'skip')) {
 // ==================================================================
 
     else if (mess.startsWith(prefix + 'resume')) {
+	    
+     dispatcher.end();
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	    
          dispatcher.resume();
-
-	 function dispatcher.resume() {
 	
-          if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-
-            dispatcher.end();
-	    
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
