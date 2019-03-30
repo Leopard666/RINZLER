@@ -411,7 +411,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	
-         dispatcher.end('Skip command has been used!');
+         dispatcher.end(':x: Skip Command Has Been Used ! :x:');
 	    		
             var server = server = servers[message.guild.id];
 
@@ -453,6 +453,8 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         dispatcher.setVolume(1 * args / 50);
 	    
+        dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+	    
         message.channel.sendMessage(`**:loud_sound:  |  [ ${dispatcher.volume*50}% ] : تم تغير مستوى الصوت  |  :loud_sound:**`);
 
 	  message.channel.send({
@@ -484,6 +486,8 @@ else if (mess.startsWith(prefix + 'skip')) {
 
             dispatcher.pause();
 	    
+	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
@@ -513,6 +517,8 @@ else if (mess.startsWith(prefix + 'skip')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
             dispatcher.resume();
+	    
+	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
 	    
 	    message.channel.send({
 	  
@@ -546,6 +552,8 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	    
+	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
+	    
 	    message.channel.send({
 	  
 	    embed: new Discord.RichEmbed()
@@ -556,7 +564,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 				
 	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
 		    
-	    .addField(':red_circle: | **RINZLER : IS HAS DISACTIVATED NOW**')
+	    .addField(':red_circle: | **RINZLER : IS OUT OFF DUTY NOW**')
 
 	    .addField('● ``BOT CMD`` :keyboard: **:**' , `**Use -help For Bot Commands**`)
 	    
@@ -594,7 +602,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 				
 	    .addField(':ballot_box_with_check: | **★・。RINZLER : IS READY FOR FIGHT NOW ・゜★**')
 		    
-	    .addField('● ``BOT CMD :keyboard: :``' , `**Use -help For Bot Commands**`)
+	    .addField('● ``BOT CMD`` :keyboard: **:**' , `**Use -help For Bot Commands**`)
 		    
 	    .addField('● ``MUSIC CMD`` :musical_note: **:**' , `**Use -play For Playing Music**`)
 		    
