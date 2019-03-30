@@ -481,11 +481,11 @@ else if (mess.startsWith(prefix + 'skip')) {
 // ==================================================================
 
     else if (mess.startsWith(prefix + 'pause')) {
+	    
+      dispatcher.end(':x: Skip Command Has Been Used ! :x:');
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-	    
-	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	    
+	    	    	    
 	    dispatcher.pause();
 
 	    message.channel.send({
@@ -504,7 +504,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 		
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
-	    .setTimestamp()
+	    .setTimestamp()   
 		    
   })
 	
@@ -518,7 +518,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 	    
          dispatcher.resume();
 
-	 function dispatcher.resume(); {
+	 function dispatcher.resume() {
 	
           if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 
