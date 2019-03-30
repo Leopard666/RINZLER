@@ -80,6 +80,7 @@ client.on('message', message => {
             .setColor('859900')
             .setTitle('**🚀 HI, IM BACK [ONLINE] NOW & [UPDATED] 🚀** ')
 	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
+	    .addField('``Bot Name :``' , `★ RINZLER - 2077 ★` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ] , true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
@@ -138,6 +139,7 @@ client.on('message', message => {
             .setColor('859900')
             .setTitle('**[RINZLER] STATS** ')
 	    .addField('``Bot Version :``' , `[ v1.2 ]` , true)
+	    .addField('``Bot Name :``' , `★ RINZLER - 2077 ★` , true)
             .addField('``👑 Bot Owner 👑 :``' , `[ <@480540559233122324> ]` , true)
             .addField('``Bot Uptime :``', [ timeCon(process.uptime()) ], true)
             .addField('``Bot Ping :``' , [ `${Date.now() - message.createdTimestamp}` + 'MS' ] , true)
@@ -410,9 +412,7 @@ client.on('message', function(message) {
 else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-	
-         dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	    		
+		    		
             var server = server = servers[message.guild.id];
 
             if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
@@ -436,6 +436,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 	    .setFooter('🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰')
 		 
 	    .setTimestamp()
+		    
 
      })
 	
@@ -447,8 +448,6 @@ else if (mess.startsWith(prefix + 'skip')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	    
-	dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-
         if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
         if (args < 1) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
@@ -482,8 +481,6 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'pause')) {
 	    
-      dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	    	    	    
 	    dispatcher.pause();
@@ -514,8 +511,6 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'resume')) {
 	    
-     dispatcher.end();
-
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
 	    
          dispatcher.resume();
@@ -546,9 +541,7 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'stop')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-	    	    
-	dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	   
+	    	    	   
         var server = server = servers[message.guild.id];
 
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
@@ -588,9 +581,7 @@ else if (mess.startsWith(prefix + 'skip')) {
     else if (mess.startsWith(prefix + 'join')) {
 
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
-	    	    
-	    dispatcher.end(':x: Skip Command Has Been Used ! :x:');
-	    
+	    	    	    
 	    message.member.voiceChannel.join()
 	    
 	    message.channel.send({
