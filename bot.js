@@ -18,66 +18,6 @@ let cdseconds = 5;
 
 // ==================================================================
 
-const seender = 'Brodcast + Sender -> {sender}.';
-const server = 'Brodcast + server -> {server}.';
-const user = 'Brodcast + @user -> {user}.';
-client.on('message', message => {
-    if(!message.channel.guild) return;
-     var success = new Discord.RichEmbed()
-     .setDescription(`**Done**.`)
-     .setColor('#9F81F7')
- if(message.content.startsWith(prefix + 'bc')) {
- if(!message.channel.guild) return message.channel.send('**This Command Just For Servers**').then(m => m.delete(5000));
- if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**Youd Dont Have Prem** `ADMINISTRATOR`' );
- let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
- let BcList = new Discord.RichEmbed()
- .setColor('RANDOM')
- .setDescription(`**▶ 📝 To Send Embed Brodcast Press \n ▶ ✏ To Send Normal Brodcast Press \n ★ ${user} \n ★ ${server} \n ★ ${seender}**`)
- if (!args) return message.reply('**You should write a word or phrase To send The Brodcast**');message.channel.send(BcList).then(msg => {
- msg.react('📝')
- .then(() => msg.react('✏'))
- .then(() =>msg.react('📝'))
- 
- let EmbedBcFilter = (reaction, user) => reaction.emoji.name === '📝' && user.id === message.author.id;
- let NormalBcFilter = (reaction, user) => reaction.emoji.name === '✏' && user.id === message.author.id;
- 
- let EmbedBc = msg.createReactionCollector(EmbedBcFilter, { time: 60000 });
- let NormalBc = msg.createReactionCollector(NormalBcFilter, { time: 60000 });
- 
- 
- EmbedBc.on("collect", r => {
- 
- message.channel.send(success);
- message.guild.members.forEach(m => {
- let EmbedRep = args.replace('{server}' ,message.guild.name).replace('{user}', m).replace('{sender}', `${message.author}`)
- var bc = new
- Discord.RichEmbed()
- .setColor('RANDOM')
- .setFooter('📢 | TG™ - BroadCast | 📢')
- .addField('🔰 | السيرفر 🔰 | :', message.guild.name)
- .addField('🚩 | المرسل 🚩 | :', message.author.username)
- .setDescription(EmbedRep)
- .setFooter('🔰 [ THE GRID™ - OFFICIAL ] 🔰')
- .setTimestamp()
- 
- m.send({ embed: bc })
- msg.delete();
- })
- })
- NormalBc.on("collect", r => {
-   message.channel.send(success);
- message.guild.members.forEach(m => {
-    let NormalRep = args.replace('{server}' ,message.guild.name).replace('{user}', m).replace('{sender}', `${message.author}`)
- m.send(NormalRep);
- msg.delete();
- })
- })
- })
- }
- });
-
-// ==================================================================
-
 ////////////////// [ 🔰 CONSOL RINZLER LOGS 🔰 ] //////////////////
 
 client.on('warn', console.warn);
