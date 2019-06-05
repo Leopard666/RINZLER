@@ -382,7 +382,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Channel ID 🆔 :``' , `[${videoInfo.channelId}]` , true)
 		    
-		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.minutes.hours.seconds}`, true)
+		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}` , true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
