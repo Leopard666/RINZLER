@@ -1073,7 +1073,7 @@ client.on('message', message => {
        Discord.RichEmbed()
        .setColor('RANDOM')
     
-       .setTitle('**:incoming_envelope:رسالة:incoming_envelope:**')
+       .setTitle('**:incoming_envelope: [PROADCAST FROM TG™] :incoming_envelope:**')
     
        .addField('**:diamond_shape_with_a_dot_inside:السيرفر:diamond_shape_with_a_dot_inside:**', message.guild.name)
     
