@@ -877,9 +877,7 @@ client.on('message', message => {
             console.log(`Rinzler Is Restarting Now..`);
             setTimeout(() => {
             client.destroy();
-            client.login(process.env.BOT_TOKEN);
-            },3000);
-
+            process.exit(1);
 }
 });
 
