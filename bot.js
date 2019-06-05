@@ -236,7 +236,7 @@ client.on('guildCreate', guild => {
     
     .setColor('RANDOM')
     
-    .setDescription(`:heart: **شكراً لك لإضافه البوت الى سيرفرك** :heart:`)
+    .setDescription(`:heart: | **شكراً لك لإضافه البوت الى سيرفرك** | :heart:`)
     
     .addField('**● Bot Version** :robot: :' , `**[ v1.2 ]**`)
     
@@ -286,7 +286,7 @@ client.on('message', function(message) {
 	
     if (mess.startsWith(prefix + 'play')) {
 	    	    
-        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي**'); 
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**'); 
 		 
         if (args.length == 0) {
 
@@ -411,7 +411,7 @@ client.on('message', function(message) {
 
 else if (mess.startsWith(prefix + 'skip')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 		    		
             var server = server = servers[message.guild.id];
 
@@ -446,7 +446,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 			
     else if (message.content.startsWith(prefix + 'volume')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 	    
         if (args > 100) return message.channel.send(':sound: | **[1 - 100] : لا أكثر ولا أقل** | :sound:')
 
@@ -481,7 +481,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'pause')) {
 	    
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 	    	    	    
 	    dispatcher.pause();
 
@@ -511,7 +511,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'resume')) {
 	    
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 	    
          dispatcher.resume();
 	
@@ -540,7 +540,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'stop')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 	    	    	   
         var server = server = servers[message.guild.id];
 
@@ -580,7 +580,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'join')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 	    	    	    
 	    message.member.voiceChannel.join()
 	    
@@ -616,7 +616,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
     else if (mess.startsWith(prefix + 'play')) {
 
-        if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+        if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 
         if (isPlaying == false) return message.channel.send(':stop_button: | **تم التوقيف الموسيقى**');
 
@@ -640,7 +640,7 @@ else if (mess.startsWith(prefix + 'skip')) {
 
 function skip_song(message) {
 	
-   if (!message.member.voiceChannel) return message.channel.send(':no_entry: | **يجب ان تكون في روم صوتي**');
+   if (!message.member.voiceChannel) return message.channel.send('**:no_entry: | يجب ان تكون في روم صوتي | :no_entry:**');
 
   dispatcher.end();
 
