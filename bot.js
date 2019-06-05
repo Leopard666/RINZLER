@@ -1077,7 +1077,21 @@ client.on('message', message => {
     })
     })
     }
-	
+let cooldown = new Set();
+let cdseconds = 5;
+if(!message.content.startsWith(prefix)) return;
+  if(cooldown.has(message.author.id)){
+    message.delete();
+  return  message.reply("reason")
+  }
+  if(!message.member.hasPermission("ADMINISTRATOR")){
+    cooldown.add(message.author.id);
+  }
+setTimeout(() => {
+  cooldown.delete(message.author.id)
+}, cdseconds * 1000)
+    });
+
 // ==================================================================
 
                  client.login(process.env.BOT_TOKEN);
