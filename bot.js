@@ -382,7 +382,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Channel ID 🆔 :``' , `[${videoInfo.channelId}]` , true)
 		    
-		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.hours}:${videoInfo.duration.minutes}:${videoInfo.duration.seconds}` , true)
+		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.time}` , true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
@@ -826,9 +826,11 @@ client.on('message', message => {
 
 ❖═════════════════════════════════════❖
 
-:heavy_plus_sign: [❖═════ ● Other Bot Commands ● ═══════❖] :heavy_plus_sign:   
+:heavy_plus_sign: [❖═════ ● SUPPORT US ● ═══════❖] :heavy_plus_sign:   
 
 ● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
+
+● :e_mail: : ${prefix}contact :arrow_right: اتصل بنا ●
 
 :hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
    
@@ -877,8 +879,10 @@ client.on('message', message => {
             console.log(`Rinzler Is Restarting Now..`);
             setTimeout(() => {
             client.destroy();
-            process.exit(1);
+            client.login(process.env.BOT_TOKEN);
+            },3000);
 
+}
 });
 
 // ==================================================================
@@ -992,7 +996,44 @@ Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
     }
 
 });
+	    
+// ==================================================================
 
+client.on('message' , message => {
+var prefix = "-"
+
+if (message.author.bot) return;
+if (message.content.startsWith(prefix + "contact")) {
+if (!message.channel.guild) return;
+
+
+
+let args = message.content.split(" ").slice(1).join(" ");
+
+
+
+client.users.get("480540559233122324").send(
+    "\n" + "**" + "● السيرفر :" + "**" +
+    "\n" + "**" + "» " + message.guild.name + "**" +
+    "\n" + "**" + " ● المرسل : " + "**" +
+    "\n" + "**" + "» " + message.author.tag + "**" +
+    "\n" + "**" + " ● الرسالة : " + "**" +
+    "\n" + "**" + args + "**")
+
+let embed = new Discord.RichEmbed()
+     .setAuthor(message.author.username, message.author.avatarURL)
+     .setDescription('**:mailbox_with_mail: | تم ارسال الرسالة الى صاحب البوت بنجاح | :mailbox_with_mail:**')
+     .setThumbnail(message.author.avatarURL)
+     .setFooter("🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰")
+                                                
+
+message.channel.send(embed);
+
+
+}
+    
+});	    
+	    
 // ==================================================================
 
                  client.login(process.env.BOT_TOKEN);
