@@ -852,7 +852,10 @@ message.author.sendEmbed(embed)
 });
 
 // ==================================================================
-
+	    
+const child_process = require("child_process");
+const adminprefix = "-";
+const devs = ['480540559233122324'];
 
 client.on('message', message => {
 	
@@ -878,16 +881,14 @@ client.on('message', message => {
 	    .setDescription(`**⚠️ PLEASE WAIT TILL EVERYTHING SETUP ⚠️**`)
 		  
 		 });
-	    
-	    console.log(`${message.author.tag} [ ${message.author.id} ] Rinzler Has Restarted Successfully.`);
-            console.log(`Rinzler Is Restarting Now..`);
-            setTimeout(() => {
-            client.destroy();
-            client.login(process.env.BOT_TOKEN);
-            },3000);
 
-}
-});
+        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
+        client.destroy();
+        child_process.fork(__dirname + "/bot.js");
+        console.log(`تم اعادة تشغيل البوت`);
+    }
+  
+  });
 
 // ==================================================================
 
@@ -1017,18 +1018,24 @@ let args = message.content.split(" ").slice(1).join(" ");
 
 
 client.users.get("480540559233122324").send(
-    "\n" + "**" + "● السيرفر :" + "**" +
+	
+    "\n" + "**" + "● السيرفر ● :" + "**" +
+	
     "\n" + "**" + "» " + message.guild.name + "**" +
-    "\n" + "**" + " ● المرسل : " + "**" +
+	
+    "\n" + "**" + "● المرسل ● :" + "**" +
+	
     "\n" + "**" + "» " + message.author.tag + "**" +
-    "\n" + "**" + " ● الرسالة : " + "**" +
+	
+    "\n" + "**" + "● الرسالة ● :" + "**" +
+	
     "\n" + "**" + args + "**")
 
 let embed = new Discord.RichEmbed()
      .setAuthor(message.author.username, message.author.avatarURL)
      .setDescription('**:mailbox_with_mail: | تم ارسال الرسالة الى صاحب البوت بنجاح | :mailbox_with_mail:**')
      .setThumbnail(message.author.avatarURL)
-     .setFooter("🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰")
+     .setFooter("THE GRID™ - OFFICIAL - 2019©")
                                                 
 
 message.channel.send(embed);
@@ -1047,7 +1054,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**الأمر بالسيرفرات بس**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰™";
+    let copy = "THE GRID™ - OFFICIAL - 2019©";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**ترسل برودكاست فاضي؟**');message.channel.send(`**متأكد؟** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -1065,12 +1072,19 @@ client.on('message', message => {
     var bc = new
        Discord.RichEmbed()
        .setColor('RANDOM')
-       .setTitle('**:incoming_envelope:رسالة:incoming_envelope:')
+    
+       .setTitle('**:incoming_envelope:رسالة:incoming_envelope:**')
+    
        .addField('**:diamond_shape_with_a_dot_inside:السيرفر:diamond_shape_with_a_dot_inside:**', message.guild.name)
+    
        .addField('**:black_joker:المرسل:black_joker:**', message.author.username)
-       .addField(':page_facing_up:الرسالة:page_facing_up:', args)
+    
+       .addField('**:page_facing_up:الرسالة:page_facing_up:**', args)
+    
        .setThumbnail(message.author.avatarURL)
+    
        .setFooter(copy, client.user.avatarURL);
+	    
     m.send({ embed: bc })
     msg.delete();
     })
