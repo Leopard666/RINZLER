@@ -30,7 +30,7 @@ client.on('reconnecting', () => console.log('🔰 I Am Reconnecting Now ! 🔰')
 
 client.on('ready', function() {
 
-    console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
+console.log(`🔰 [ ${client.user.username} ] : IS READY TO FIGHT NOW 🔰`);
 
 });
 
@@ -382,7 +382,7 @@ client.on('message', function(message) {
 		    
 		        .addField('● ``Channel ID 🆔 :``' , `[${videoInfo.channelId}]` , true)
 		    
-		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.minutes}`, true)
+		        .addField('● ``Video Time ⌛ :``' , `${videoInfo.duration.minutes.hours.seconds}`, true)
 		    
 		        .addField('● ``Views ★ :``' , `${videoInfo.views}`, true)
 
@@ -554,9 +554,9 @@ else if (mess.startsWith(prefix + 'skip')) {
 
             .setAuthor(message.author.username,message.author.avatarURL)
 				
-	    .addField(':stop_button: | **تم إيقآف الموسيقى**')
+	    .addField('**:stop_button: | تم إيقآف الموسيقى |:stop_button:**')
 		    
-	    .addField(':red_circle: | **RINZLER : IS OUT OFF DUTY NOW**')
+	    .addField('**:red_circle: | IM OUT OFF DUTY NOW | :red_circle:**')
 
 	    .addField('● ``BOT CMD`` :keyboard: **:**' , `**Use -help For Bot Commands**`)
 	    
