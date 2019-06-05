@@ -878,7 +878,7 @@ client.on('message', message => {
             setTimeout(() => {
             client.destroy();
             process.exit(1);
-}
+
 });
 
 // ==================================================================
