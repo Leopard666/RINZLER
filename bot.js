@@ -772,6 +772,8 @@ client.on('message', message => {
   if (message.author.bot) return;
 	
    if (message.content === prefix + "help") {
+	     
+     message.react("👍")
 	   
   if(!message.content.startsWith(prefix)) return;
 	   
@@ -828,9 +830,11 @@ client.on('message', message => {
 
 :heavy_plus_sign: [❖═════ ● SUPPORT US ● ═══════❖] :heavy_plus_sign:   
 
-● :books: : سيرفر دعم :arrow_right: https://discord.gg/PzbDJwx ●
+● :books: : سيرفر دعم :arrow_right: Discord.gg/PzbDJwx :arrow_left: ●
 
 ● :e_mail: : ${prefix}contact :arrow_right: اتصل بنا ●
+
+● :link: : ${prefix}invite :arrow_right: INVITE BOT [RINZLER] :link: ●
 
 :hearts: [❖══════ ● المزيد قريبا ان شاء الله! ● ═══════❖] :hearts:**`)
    
@@ -1043,7 +1047,7 @@ client.on('message', message => {
     if(!message.channel.guild) return message.channel.send('**الأمر بالسيرفرات بس**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**ماعندك الصلاحية المطلوبة**' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "🔰 THE GRID 🔰™";
+    let copy = "🔰 [ THE GRID™ - OFFICIAL - 2019© ] 🔰™";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**ترسل برودكاست فاضي؟**');message.channel.send(`**متأكد؟** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -1091,6 +1095,18 @@ setTimeout(() => {
   cooldown.delete(message.author.id)
 }, cdseconds * 1000)
     });
+
+// ==================================================================
+
+    client.on('message', message => {
+        if(message.content.startsWith('-invite')) {
+            let embed = new Discord.RichEmbed()
+            .setAuthor(` ${message.author.username} `, message.author.avatarURL)      
+            .setTitle(`:small_orange_diamond: Click Here :small_orange_diamond:`)
+            .setURL(`https://discord.gg/6gmwSgx`)        
+         message.channel.sendEmbed(embed);
+           }
+       }); 
 
 // ==================================================================
 
